@@ -475,15 +475,16 @@ footer span {
   }
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   label {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
   }
 }
+
 
 
 
