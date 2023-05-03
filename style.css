@@ -486,10 +486,8 @@ footer span {
 }
 
 label {
-  margin-left: 10px;
+  display: flex;
+  justify-content: center;
 }
 
-label {
-  padding-right: 10px;
-}
 
