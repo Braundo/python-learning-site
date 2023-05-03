@@ -477,10 +477,9 @@ footer span {
 @media (max-width: 768px) {
   body {
     font-size: 10px;
+    input[type=checkbox] {
+      width: 20px;
+      padding: 10px 0;
+    }
   }
 }
-
-
-
-
-
