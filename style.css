@@ -499,6 +499,37 @@ footer span {
   margin: 0;
   padding-bottom: 50px;
 }
+  
+  .checklist-item__expand {
+  float: right;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  background: 0 0;
+}
+  
+  .line {
+  display: block;
+  width: 12px;
+  transition: all 0.3s cubic-bezier(0.76, -0.26, 0.15, 1.32);
+  transform: translateY(-50%);
+  transform-origin: center center;
+  outline: 1px solid transparent;
+  background: #44475a;
+}
+.line:after {
+  display: block;
+  width: 12px;
+  height: 4px;
+  content: "";
+  transition: all 0.3s cubic-bezier(0.76, -0.26, 0.15, 1.32);
+  transform: rotate(90deg);
+  transform-origin: center center;
+  outline: 1px solid transparent;
+  background: #44475a;
+}
 
     }
   }
