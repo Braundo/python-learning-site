@@ -484,3 +484,9 @@ footer span {
 
   /* Other mobile-specific CSS rules */
 }
+
+label {
+  display: flex;
+  justify-content: center;
+
+}
