@@ -478,6 +478,9 @@ footer span {
   input {
     white-space: nowrap;
   }
+  body {
+    font-size: 10px;
+  }
 }
 
 
