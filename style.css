@@ -476,7 +476,7 @@ footer span {
 }
 @media (max-width: 768px) {
   body {
-    font-size: 15px;
+    font-size: 14px;
   }
   .checkbox {
   position: relative;
@@ -502,8 +502,8 @@ footer span {
   
   .checklist-item__expand {
   float: right;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
   border: 0;
   outline: 0;
