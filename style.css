@@ -481,6 +481,11 @@ footer span {
   body {
     font-size: 13px;
   }
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   /* Other mobile-specific CSS rules */
 }
