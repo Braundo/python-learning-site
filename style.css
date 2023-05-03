@@ -489,9 +489,11 @@ footer span {
   border: 2px solid #44475a;
   border-radius: 3px;
 }
-  h1 {
-  font-size: 1em;
-  margin: 0.67em 0;
+  .title {
+  font-size: 3.5em;
+  font-weight: 500;
+  margin: 0.5em 0.2em 0.375em;
+  text-align: center;
 }
     }
   }
