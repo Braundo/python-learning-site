@@ -477,7 +477,8 @@ footer span {
 @media (max-width: 768px) {
   body {
     font-size: 10px;
-    .checkbox {
+  }
+  .checkbox {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -488,7 +489,6 @@ footer span {
   border: 2px solid #44475a;
   border-radius: 3px;
 }
-  }
     }
   }
 }
