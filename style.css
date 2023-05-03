@@ -495,9 +495,11 @@ footer span {
   margin: 0.5em 0.2em 0.375em;
   text-align: center;
 }
-  .container {
-  padding-bottom: 20px;
+  .container .checklist .checklist-container {
+  margin: 0;
+  padding-bottom: 50px;
 }
+
     }
   }
 }
