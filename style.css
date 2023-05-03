@@ -474,16 +474,12 @@ footer span {
     page-break-after: avoid;
   }
 }
-
 @media (max-width: 768px) {
-  label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  input {
     white-space: nowrap;
   }
 }
+
 
 
 
