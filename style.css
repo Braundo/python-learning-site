@@ -474,3 +474,13 @@ footer span {
     page-break-after: avoid;
   }
 }
+
+/* Mobile styles */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  /* Other mobile-specific CSS rules */
+}
