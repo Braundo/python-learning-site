@@ -486,7 +486,10 @@ footer span {
 }
 
 label {
-  display: flex;
-  justify-content: center;
-
+  margin-left: 10px;
 }
+
+label {
+  padding-right: 10px;
+}
+
