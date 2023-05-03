@@ -477,7 +477,6 @@ footer span {
 @media (max-width: 768px) {
   body {
     font-size: 14px;
-    padding-top: 8px;
   }
   .checkbox {
   position: relative;
@@ -501,36 +500,6 @@ footer span {
   padding-bottom: 50px;
 }
   
-  .checklist-item__expand {
-  float: right;
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-  border: 0;
-  outline: 0;
-  background: 0 0;
-}
-  
-  .line {
-  display: block;
-  width: 15px;
-  transition: all 0.3s cubic-bezier(0.76, -0.26, 0.15, 1.32);
-  transform: translateY(-50%);
-  transform-origin: center center;
-  outline: 0.5px solid transparent;
-  background: #44475a;
-}
-.line:after {
-  display: block;
-  width: 15px;
-  height: 4px;
-  content: "";
-  transition: all 0.3s cubic-bezier(0.76, -0.26, 0.15, 1.32);
-  transform: rotate(90deg);
-  transform-origin: center center;
-  outline: 0.5px solid transparent;
-  background: #44475a;
-}
 
     }
   }
