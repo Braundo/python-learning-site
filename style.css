@@ -482,8 +482,8 @@ footer span {
     }
     .checklist-item__expand {
   float: right;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   cursor: pointer;
   border: 0;
   outline: 0;
