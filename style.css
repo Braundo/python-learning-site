@@ -481,8 +481,8 @@ footer span {
   position: relative;
   top: 1px;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   cursor: pointer;
   transition: background 150ms ease;
   border: 2px solid #44475a;
