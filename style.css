@@ -477,6 +477,7 @@ footer span {
 @media (max-width: 768px) {
   body {
     font-size: 14px;
+    padding-top: 8px;
   }
   .checkbox {
   position: relative;
