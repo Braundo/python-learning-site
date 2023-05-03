@@ -512,7 +512,7 @@ footer span {
   
   .line {
   display: block;
-  width: 12px;
+  width: 15px;
   transition: all 0.3s cubic-bezier(0.76, -0.26, 0.15, 1.32);
   transform: translateY(-50%);
   transform-origin: center center;
@@ -521,7 +521,7 @@ footer span {
 }
 .line:after {
   display: block;
-  width: 12px;
+  width: 15px;
   height: 4px;
   content: "";
   transition: all 0.3s cubic-bezier(0.76, -0.26, 0.15, 1.32);
