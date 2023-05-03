@@ -476,23 +476,14 @@ footer span {
 }
 
 /* Mobile styles */
-
 @media (max-width: 768px) {
-  body {
-    font-size: 13px;
-  }
   label {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
-  /* Other mobile-specific CSS rules */
 }
 
-label {
-  display: flex;
-  justify-content: center;
-}
 
 
