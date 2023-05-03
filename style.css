@@ -499,6 +499,18 @@ footer span {
   margin: 0;
   padding-bottom: 50px;
 }
+
+.checklist-item__title {
+  font-size: 1.125em;
+  line-height: 1.25;
+  display: inline-block;
+  width: calc(100% - 48px);
+  margin-left: 8px;
+  cursor: pointer;
+  transition: color 250ms ease;
+  vertical-align: top;
+  padding-bottom: 20px;
+}
   
 
     }
