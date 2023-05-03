@@ -479,7 +479,7 @@ footer span {
     white-space: nowrap;
   }
   body {
-    font-size: 11px;
+    overflow-wrap: break-word;
   }
 }
 
