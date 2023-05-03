@@ -477,8 +477,17 @@ footer span {
 @media (max-width: 768px) {
   body {
     font-size: 10px;
-    .expand-toggle-icon {
-    width: 10px;
+    .checkbox {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: background 150ms ease;
+  border: 2px solid #44475a;
+  border-radius: 3px;
+}
   }
     }
   }
