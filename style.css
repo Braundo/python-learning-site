@@ -489,6 +489,10 @@ footer span {
   border: 2px solid #44475a;
   border-radius: 3px;
 }
+  h1 {
+  font-size: 1.5em;
+  margin: 0.67em 0;
+}
     }
   }
 }
