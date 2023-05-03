@@ -475,11 +475,8 @@ footer span {
   }
 }
 @media (max-width: 768px) {
-  input {
-    white-space: nowrap;
-  }
   body {
-    overflow-wrap: break-word;
+    font-size: 1rem;
   }
 }
 
