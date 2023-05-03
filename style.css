@@ -479,8 +479,7 @@ footer span {
     font-size: 10px;
     input[type=checkbox] {
       box-sizing: border-box;
-    }
-    .checklist-item__expand {
+          .checklist-item__expand {
   float: right;
   width: 10px;
   height: 10px;
@@ -489,5 +488,6 @@ footer span {
   outline: 0;
   background: 0 0;
 }
+    }
   }
 }
