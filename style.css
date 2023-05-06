@@ -363,6 +363,7 @@ input[type="checkbox"]:checked ~ .checklist-item__title {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.3s ease-in;
+  padding-top: 10px;
 }
 .info-container ul {
   padding-left: 26px;
