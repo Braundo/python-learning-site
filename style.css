@@ -491,8 +491,8 @@ footer span {
 }
   .checkbox:after {
   position: absolute;
-  top: 0px;
-  left: 2px;
+  top: -0.5px;
+  left: 2.5px;
   width: 5px;
   height: 10px;
   content: "";
