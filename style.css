@@ -207,6 +207,7 @@ a:hover {
   width: 350px;
   height: 6px;
   margin-bottom: 8px;
+  margin-left: 20px;
   transition: transform 350ms ease;
   transform: scaleX(0);
   transform-origin: left;
