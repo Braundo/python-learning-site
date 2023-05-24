@@ -114,6 +114,42 @@ a:hover {
   color: #e6e6e6;
   border: 0;
 }
+.make-snippet {
+  position: relative;
+  width: 650px;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #50fa7b;
+  color: #44475a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.copy-btn:hover {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #b9ffcb;
+  color: #44475a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+pre {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
 .progress {
   margin-bottom: 5px;
   text-align: center;
@@ -450,10 +486,12 @@ input[type="checkbox"]:checked ~ .checklist-item__title {
 }
 footer {
   font-weight: 300;
+  font-family: "Fira Code";
+  font-size: 14px;
   margin-top: 1.25em;
   padding: 0.85em 1.85em;
   text-align: center;
-  border-top: 1px solid #57b26e;
+  border-top: 0px solid #57b26e;
   align-self: center;
 }
 footer span {
