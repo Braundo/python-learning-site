@@ -397,7 +397,7 @@ input[type="checkbox"]:checked ~ .checklist-item__title {
   transition: max-height 0.3s ease-in;
 }
 .info-container ul {
-  padding-left: 26px;
+  padding-left: 50px;
   list-style-type: disc;
 }
 .info-container li {
