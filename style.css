@@ -129,6 +129,7 @@ a:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Fira Code';
 }
 .copy-btn:hover {
   position: absolute;
@@ -140,6 +141,11 @@ a:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Fira Code';
+}
+.copy-btn: {
+  -webkit-animation: wiggle 350ms ease alternate;
+  animation: wiggle 350ms ease alternate;
 }
 
 pre {
