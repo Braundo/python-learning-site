@@ -1327,7 +1327,7 @@ Interested in running this locally for some reason? With Docker installed, do th
       copyBtn.addEventListener("click", function () {
         var preElem = this.previousElementSibling;
         var codeElem = preElem.querySelector("code");
-        var codeText = codeElem.textContent;
+        var codeText = "docker "+ codeElem.textContent;
         var tempTextarea = document.createElement("textarea");
         tempTextarea.value = codeText;
         document.body.appendChild(tempTextarea);

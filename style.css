@@ -150,7 +150,7 @@ a:hover {
 
 pre {
   background-color: black;
-  color: #ffffff;
+  color: #c8c8c8;
   padding: 10px;
   border-radius: 5px;
   overflow-x: auto;
@@ -162,6 +162,7 @@ pre:before {
   padding: 10px;
   border-radius: 5px;
   overflow-x: auto;
+  font-weight: 900;
 }
 
 .progress {
