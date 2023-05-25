@@ -150,7 +150,15 @@ a:hover {
 
 pre {
   background-color: black;
-  color: white;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+pre:before {
+  background-color: black;
+  color: #50fa7b;
+  content: 'docker';
   padding: 10px;
   border-radius: 5px;
   overflow-x: auto;
