@@ -609,6 +609,58 @@ footer span {
   vertical-align: top;
   padding-bottom: 20px;
 }
+.make-snippet {
+  position: relative;
+  left: -80px;
+  width: 384px;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 2.5px 5px;
+  background-color: #50fa7b;
+  color: #44475a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Fira Code';
+}
+.copy-btn:hover {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #b9ffcb;
+  color: #44475a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Fira Code';
+}
+.copy-btn: {
+  -webkit-animation: wiggle 350ms ease alternate;
+  animation: wiggle 350ms ease alternate;
+}
+
+pre {
+  background-color: black;
+  color: #c8c8c8;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+}
+pre:before {
+  background-color: black;
+  color: #50fa7b;
+  content: 'docker';
+  padding: 10px;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+  font-weight: 900;
+}
+
   
 
     }
