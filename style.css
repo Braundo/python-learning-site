@@ -221,6 +221,77 @@ pre:before {
   transform-origin: left;
   background: #50fa7b;
 }
+.learn_btn {
+  font-family: inherit;
+  line-height: 100px;
+  display: inline-block;
+  width: 400px;
+  height: 100px;
+  font-size: 50px;
+  margin-left: 0.75em;
+  padding: 0 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.025em;
+  color: inherit;
+  border: 1px solid #44475a;
+  border-radius: 10px;
+  outline: 0;
+  background: #44475a;
+  box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11),
+    0 1px 3px rgba(33, 16, 118, 0.1);
+}
+.learn_btn:focus,
+.learn_btn:hover {
+  background: #6272a4;
+  box-shadow: 0 7px 14px rgba(33, 16, 118, 0.16),
+    0 3px 6px rgba(33, 16, 118, 0.2);
+    color: #ffffff;
+}
+.learn_btn:active {
+  box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11),
+    0 1px 3px rgba(33, 16, 118, 0.1);
+}
+.learn_btn--pressed {
+  -webkit-animation: wiggle 350ms ease alternate;
+  animation: wiggle 350ms ease alternate;
+}
+.home_btn {
+  font-family: inherit;
+  line-height: 40px;
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 0 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.025em;
+  color: inherit;
+  border: 1px solid #44475a;
+  border-radius: 5px;
+  outline: 0;
+  background: #44475a;
+  box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11),
+    0 1px 3px rgba(33, 16, 118, 0.1);
+}
+.home_btn:focus,
+.home_btn:hover {
+  background: #6272a4;
+  box-shadow: 0 7px 14px rgba(33, 16, 118, 0.16),
+    0 3px 6px rgba(33, 16, 118, 0.2);
+    color: #ffffff;
+}
+.home_btn:active {
+  box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11),
+    0 1px 3px rgba(33, 16, 118, 0.1);
+}
+.home_btn--pressed {
+  -webkit-animation: wiggle 350ms ease alternate;
+  animation: wiggle 350ms ease alternate;
+}
 .container {
   display: flex;
   flex-grow: 1;
@@ -383,6 +454,16 @@ input[type="checkbox"]:checked ~ .checklist-item__title {
   border: 0;
   outline: 0;
   background: 0 0;
+}
+.parent {
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
 }
 .line {
   display: block;
