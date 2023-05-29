@@ -131,7 +131,51 @@ a:hover {
   width: 650px;
   overflow-wrap: normal;
 }
+.dismissible {
+	color: #282a36;
+	font-size: 25px;
+	line-height: 25px;
+	position: relative;
+	overflow: hidden;
+}
 
+ .dismissible span {
+	background: #50fa7b;
+	border-radius: 5px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2);
+	box-sizing: border-box;
+	display: block;
+	margin: 0 auto 20px auto;
+	padding: 10px;
+	position: relative;
+
+ }
+
+.dismissible button {
+	background: #282a36;
+	border: 0;
+	border-radius: 100%;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	height: 24px;
+	line-height: 20px;
+	margin-top: -12px;
+	right: 10px;
+	position: absolute;
+	top: 50%;
+	width: 24px;
+}
+
+.dismissible button:focus {
+	outline: none;
+  background: #44475a;
+}
+.dismissible button:hover {
+	outline: none;
+  background: #44475a;
+}
 .copy-btn {
   position: absolute;
   top: 5px;
