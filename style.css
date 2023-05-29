@@ -129,6 +129,7 @@ a:hover {
 .make-snippet {
   position: relative;
   width: 650px;
+  overflow-wrap: normal;
 }
 
 .copy-btn {
@@ -704,8 +705,9 @@ footer span {
 }
 .make-snippet {
   position: relative;
-  left: -80px;
-  width: 384px;
+  width: 150px;
+  overflow-wrap: normal;
+  padding-bottom: 12px;
 }
 
 .copy-btn {
@@ -742,7 +744,7 @@ pre {
   color: #c8c8c8;
   padding: 10px;
   border-radius: 5px;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 pre:before {
   background-color: black;
@@ -750,7 +752,7 @@ pre:before {
   content: 'docker';
   padding: 10px;
   border-radius: 5px;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
   font-weight: 900;
 }
 
