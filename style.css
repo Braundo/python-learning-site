@@ -278,6 +278,12 @@ pre:before {
   transform-origin: left;
   background: #50fa7b;
 }
+img {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  float: left;
+}
 .learn_btn {
   font-family: inherit;
   line-height: 100px;
