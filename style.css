@@ -365,7 +365,7 @@ img {
   justify-content: space-around;
 }
 .container .checklist {
-  min-width: 50%;
+  min-width: 100%;
   max-width: 100%;
   margin: 15px 15px 0;
   margin-bottom: 65px;
@@ -435,7 +435,7 @@ img {
   font-size: 1.125em;
   line-height: 1.25;
   display: inline-block;
-  width: calc(100% - 48px);
+  width: 15%;
   margin-left: 8px;
   cursor: pointer;
   transition: color 250ms ease;
