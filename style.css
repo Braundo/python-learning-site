@@ -379,10 +379,10 @@ img {
   font-weight: 500;
   margin: 0;
   margin-left: 20px;
-  color: #e6e6e6;
+  color: #b6f5c6;
 }
 .checklist__title-border {
-  display: block;
+  display: table;
   width: 350px;
   margin-top: 8px;
   margin-left: 20px;
