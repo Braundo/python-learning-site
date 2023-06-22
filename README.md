@@ -7,4 +7,4 @@ This code is currently hosted live at [pythonlearning.io](https://pythonlearning
 
 ## Outstanding tasks
 
-[] Implement `localStorage` and `sessionStorage` to maintain progress state between browser refreshes
+- [ ] Implement `localStorage` and `sessionStorage` to maintain progress state between browser refreshes
