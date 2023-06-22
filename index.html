@@ -1,1722 +1,1675 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Python Learning Plan</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
-
-
-    <style>
-      body {
-        font-family: "Nunito", Arial, sans-serif;
-        background-color: #f9f9f9;
-      }
-
-      .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .flex-item {
-        flex-basis: 550px;
-        margin-bottom: 2rem;
-      }
-
-      @media (max-width: 768px) {
-        .bullet h3 {
-          display: inline;
-          font-size: 14px !important;
-          margin-right: 5px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          max-width: 100%;
-      }
-      .page-title {
-        font-size: 20px !important;
-      }
-
-      .logo {
-        width: 18px;
-        height: 20px;
-        margin-right: 10px; /* Add margin */
-      }
-    }
-
-
-      .content-block {
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        background-color: #f8f8f8;
-      }
-
-      .content-block .bullet-list .bullet {
-        margin-bottom: 1rem;
-      }
-
-      .content-block .bullet-list .bullet .bullet-content {
-        display: none;
-        margin-top: 5px;
-        margin-bottom: 5px;
-      }
-
-      /* Dark mode styles */
-      body.dark-mode {
-        background-color: rgb(53, 54, 64);
-        color: #fff;
-      }
-
-      body.dark-mode .content-block {
-        background-color: rgb(68, 70, 83);
-      }
-
-      /* Dark mode switch styles */
-      .dark-mode-switch {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        display: flex;
-        align-items: center;
-        z-index: 9999;
-      }
-      /* Dark mode styles for progress bar */
-      body.dark-mode #progress-bar {
-        background-color: rgb(68, 70, 83);
-      }
-
-      .dark-mode-switch span {
-        margin-left: 10px;
-        color: #000;
-      }
-
-      body.dark-mode .dark-mode-switch span {
-        color: #fff;
-      }
-
-      .dark-mode-switch input {
-        position: absolute;
-        left: -9999px;
-      }
-
-      .dark-mode-switch label {
-        cursor: pointer;
-        text-indent: -9999px;
-        width: 52px;
-        height: 27px;
-        background: rgb(239, 239, 234);
-        display: block;
-        border-radius: 100px;
-        position: relative;
-      }
-
-      .dark-mode-switch label:after {
-        content: "";
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        width: 20px;
-        height: 20px;
-        background: #fff;
-        border-radius: 90px;
-        transition: 0.3s;
-      }
-
-      .dark-mode-switch input:checked + label {
-        background: #1ba1e2;
-      }
-
-      .dark-mode-switch input:checked + label:after {
-        left: calc(100% - 5px);
-        transform: translateX(-100%);
-      }
-
-      /* Style the bullet text */
-      .bullet h3 {
-        display: inline;
-        margin-right: 5px;
-        margin-bottom: 2px;
-        font-size: 20px;
-      }
-
-      .bullet input[type="checkbox"] {
-        transform: scale(1.2);
-        margin-right: 10px;
-        border: 1px solid rgb(53, 54, 64);
-      }
-
-      .bullet input[type="checkbox"]:checked ~ h3 {
-        text-decoration: line-through;
-        opacity: 0.6;
-      }
-
-      /* Style the toggle icon */
-      .bullet .toggle-icon {
-        font-size: 14px;
-        transition: transform 0.3s, color 0.3s;
-        margin-left: 12px; /* Updated margin */
-      }
-
-      .bullet .toggle-icon.rotated {
-        transform: rotate(180deg);
-      }
-
-      /* Style the progress bar */
-      #progress-bar {
-        width: 100%;
-        overflow: hidden;
-        background-color: #e2e2e2;
-        border-radius: 12px;
-        position: relative;
-        padding: 3px;
-        margin-bottom: 12px;
-      }
-
-      #progress-bar div {
-        height: 7px;
-        background-color: #4edc53;
-        width: 0;
-        border-radius: 10px;
-        transition: width 0.4s;
-      }
-
-      /* Style the reset button */
-      #reset-button {
-        display: block;
-        margin: 0 auto;
-        border: none;
-        border-radius: 6px;
-        padding: 5px 10px;
-        color: #fff;
-        font-size: 20px;
-        background-color: rgb(68, 70, 83);
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s;
-        margin-bottom: 80px;
-      }
-
-      #reset-button:hover {
-        background-color: rgb(101, 104, 123);
-      }
-
-      #reset-button:active {
-        transform: scale(0.95);
-      }
-
-      a {
-        color: #4edc53;
-      }
-
-      /* Style the sub-bullet text */
-      .sub-bullet {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
-      }
-      .sub-bullet h4 {
-        margin: 0;
-        display: inline;
-        margin-left: 10px;
-        font-weight: 300;
-      }
-
-      .sub-bullet input[type="checkbox"] {
-        transform: scale(1.2);
-        margin-right: 5px;
-      }
-
-      .sub-bullet input[type="checkbox"]:checked ~ h4 {
-        text-decoration: line-through;
-        opacity: 0.6;
-      }
-      .page-title {
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-size: 48px;
-      }
-
-      /* Style the checkboxes */
-      .bullet input[type="checkbox"],
-      .sub-bullet input[type="checkbox"] {
-        -webkit-appearance: none; /* Remove default appearance */
-        -moz-appearance: none;
-        appearance: none;
-        outline: none;
-        position: relative;
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        margin-right: 10px;
-        border: 2px solid rgb(96, 99, 117);
-        border-radius: 4px;
-        background-color: transparent;
-        vertical-align: top; /* Add this line to vertically align checkboxes */
-      }
-
-      input[type="checkbox"]:hover {
-        background-color: rgba(53, 54, 64, 0.799);
-      }
-
-      /* Style the custom checkbox checkmark */
-      .bullet input[type="checkbox"]::before,
-      .sub-bullet input[type="checkbox"]::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 12px;
-        height: 12px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234edc53'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17' stroke='%234edc53' stroke-width='2' fill='none' /%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-
-      /* Style the custom checkbox checkmark when checked */
-      .bullet input[type="checkbox"]:checked::before,
-      .sub-bullet input[type="checkbox"]:checked::before {
-        opacity: 1;
-      }
-
-      .bullet-list {
-        margin-top: 20px; /* Added margin */
-      }
-            .page-header {
-        display: flex;
-        justify-content: center;
-        padding: 10px;
-        align-items: center;
-      }
-
-      .logo {
-        width: 45px;
-        height: 50px;
-        margin-right: 10px; /* Add margin */
-      }
-
-    </style>
-  </head>
-  <body class="dark-mode">
-    <div class="page-header">
-    <img class="logo" src="./assets/python.png" alt="Python Logo">
-    <!-- Title -->
-    <h1 class="page-title">   Python Learning Plan</h1>
-    </div>
-    <!-- Progress bar -->
-    <div class="text-center">
-      <div id="progress-bar"><div></div></div>
-
-      <!-- Reset button -->
-      <button id="reset-button">Reset Progress</button>
-    </div>
-
-    <!-- Content blocks -->
-    <div class="container flex-container">
+   <head>
+      <title>Python Learning Plan</title>
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+         />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+         />
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+      <style>
+         body {
+         font-family: "Nunito", Arial, sans-serif;
+         background-color: #f9f9f9;
+         }
+         .flex-container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 20px;
+         }
+         .flex-item {
+         flex-basis: 550px;
+         margin-bottom: 2rem;
+         }
+         @media (max-width: 768px) {
+         .bullet h3 {
+         display: inline;
+         font-size: 14px !important;
+         margin-right: 5px;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         max-width: 100%;
+         }
+         .page-title {
+         font-size: 20px !important;
+         }
+         .logo {
+         width: 18px;
+         height: 20px;
+         margin-right: 10px; /* Add margin */
+         }
+         }
+         .content-block {
+         border-radius: 15px;
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+         padding: 2rem;
+         background-color: #f8f8f8;
+         }
+         .content-block .bullet-list .bullet {
+         margin-bottom: 1rem;
+         }
+         .content-block .bullet-list .bullet .bullet-content {
+         display: none;
+         margin-top: 5px;
+         margin-bottom: 5px;
+         }
+         /* Dark mode styles */
+         body.dark-mode {
+         background-color: rgb(53, 54, 64);
+         color: #fff;
+         }
+         body.dark-mode .content-block {
+         background-color: rgb(68, 70, 83);
+         }
+         /* Dark mode switch styles */
+         .dark-mode-switch {
+         position: fixed;
+         top: 20px;
+         right: 20px;
+         display: flex;
+         align-items: center;
+         z-index: 9999;
+         }
+         /* Dark mode styles for progress bar */
+         body.dark-mode #progress-bar {
+         background-color: rgb(68, 70, 83);
+         }
+         .dark-mode-switch span {
+         margin-left: 10px;
+         color: #000;
+         }
+         body.dark-mode .dark-mode-switch span {
+         color: #fff;
+         }
+         .dark-mode-switch input {
+         position: absolute;
+         left: -9999px;
+         }
+         .dark-mode-switch label {
+         cursor: pointer;
+         text-indent: -9999px;
+         width: 52px;
+         height: 27px;
+         background: rgb(239, 239, 234);
+         display: block;
+         border-radius: 100px;
+         position: relative;
+         }
+         .dark-mode-switch label:after {
+         content: "";
+         position: absolute;
+         top: 3px;
+         left: 3px;
+         width: 20px;
+         height: 20px;
+         background: #fff;
+         border-radius: 90px;
+         transition: 0.3s;
+         }
+         .dark-mode-switch input:checked + label {
+         background: #1ba1e2;
+         }
+         .dark-mode-switch input:checked + label:after {
+         left: calc(100% - 5px);
+         transform: translateX(-100%);
+         }
+         /* Style the bullet text */
+         .bullet h3 {
+         display: inline;
+         margin-right: 5px;
+         margin-bottom: 2px;
+         font-size: 20px;
+         }
+         .bullet input[type="checkbox"] {
+         transform: scale(1.2);
+         margin-right: 10px;
+         border: 1px solid rgb(53, 54, 64);
+         }
+         .bullet input[type="checkbox"]:checked ~ h3 {
+         text-decoration: line-through;
+         opacity: 0.6;
+         }
+         /* Style the toggle icon */
+         .bullet .toggle-icon {
+         font-size: 14px;
+         transition: transform 0.3s, color 0.3s;
+         margin-left: 12px; /* Updated margin */
+         }
+         .bullet .toggle-icon.rotated {
+         transform: rotate(180deg);
+         }
+         /* Style the progress bar */
+         #progress-bar {
+         width: 100%;
+         overflow: hidden;
+         background-color: #e2e2e2;
+         border-radius: 12px;
+         position: relative;
+         padding: 3px;
+         margin-bottom: 12px;
+         }
+         #progress-bar div {
+         height: 7px;
+         background-color: #4edc53;
+         width: 0;
+         border-radius: 10px;
+         transition: width 0.4s;
+         }
+         /* Style the reset button */
+         #reset-button {
+         display: block;
+         margin: 0 auto;
+         border: none;
+         border-radius: 6px;
+         padding: 5px 10px;
+         color: #fff;
+         font-size: 20px;
+         background-color: rgb(68, 70, 83);
+         cursor: pointer;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         transition: background-color 0.3s;
+         margin-bottom: 80px;
+         }
+         #reset-button:hover {
+         background-color: rgb(101, 104, 123);
+         }
+         #reset-button:active {
+         transform: scale(0.95);
+         }
+         a {
+         color: #4edc53;
+         }
+         /* Style the sub-bullet text */
+         .sub-bullet {
+         display: flex;
+         align-items: center;
+         margin-bottom: 5px;
+         }
+         .sub-bullet h4 {
+         margin: 0;
+         display: inline;
+         margin-left: 10px;
+         font-weight: 300;
+         }
+         .sub-bullet input[type="checkbox"] {
+         transform: scale(1.2);
+         margin-right: 5px;
+         }
+         .sub-bullet input[type="checkbox"]:checked ~ h4 {
+         text-decoration: line-through;
+         opacity: 0.6;
+         }
+         .page-title {
+         text-align: center;
+         margin-top: 20px;
+         margin-bottom: 20px;
+         font-size: 48px;
+         }
+         /* Style the checkboxes */
+         .bullet input[type="checkbox"],
+         .sub-bullet input[type="checkbox"] {
+         -webkit-appearance: none; /* Remove default appearance */
+         -moz-appearance: none;
+         appearance: none;
+         outline: none;
+         position: relative;
+         display: inline-block;
+         width: 18px;
+         height: 18px;
+         margin-right: 10px;
+         border: 2px solid rgb(96, 99, 117);
+         border-radius: 4px;
+         background-color: transparent;
+         vertical-align: top; /* Add this line to vertically align checkboxes */
+         }
+         input[type="checkbox"]:hover {
+         background-color: rgba(53, 54, 64, 0.799);
+         }
+         /* Style the custom checkbox checkmark */
+         .bullet input[type="checkbox"]::before,
+         .sub-bullet input[type="checkbox"]::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 12px;
+         height: 12px;
+         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234edc53'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17' stroke='%234edc53' stroke-width='2' fill='none' /%3E%3C/svg%3E");
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: 100%;
+         opacity: 0;
+         transition: opacity 0.3s;
+         }
+         /* Style the custom checkbox checkmark when checked */
+         .bullet input[type="checkbox"]:checked::before,
+         .sub-bullet input[type="checkbox"]:checked::before {
+         opacity: 1;
+         }
+         .bullet-list {
+         margin-top: 20px; /* Added margin */
+         }
+         .page-header {
+         display: flex;
+         justify-content: center;
+         padding: 10px;
+         align-items: center;
+         }
+         .logo {
+         width: 45px;
+         height: 50px;
+         margin-right: 10px; /* Add margin */
+         }
+      </style>
+   </head>
+   <body class="dark-mode">
+      <div class="page-header">
+         <img class="logo" src="./assets/python.png" alt="Python Logo">
+         <!-- Title -->
+         <h1 class="page-title">   Python Learning Plan</h1>
+      </div>
+      <!-- Progress bar -->
+      <div class="text-center">
+         <div id="progress-bar">
+            <div></div>
+         </div>
+         <!-- Reset button -->
+         <button id="reset-button">Reset Progress</button>
+      </div>
+      <!-- Content blocks -->
+      <div class="container flex-container">
       <!-- Content Block 1 -->
       <div class="flex-item">
-        <div class="content-block">
-          <svg width="100%" height="40">
-            <defs>
-              <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stop-color="#4f72ff" />
-                <stop offset="100%" stop-color="#ee5b58" />
-              </linearGradient>
-            </defs>
-            <text
-              x="0"
-              y="30"
-              fill="url(#Gradient1)"
-              font-size="30"
-              font-weight="750"
-            >
-              Week 1
-            </text>
-          </svg>
-          <div class="bullet-list">
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Introduction to Python<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=YYXdXT2l-Gg"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Basics</a
-                    >
-                    (15:28)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.py4e.com/lessons"
-                      target="_blank"
-                      rel="noopener"
-                      >Python For Everybody</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/tutorial/"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Docs Tutorial</a
-                    >
-                  </h4>
-                </li>
-              </ul>
+         <div class="content-block">
+            <svg width="100%" height="40">
+               <defs>
+                  <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
+                     <stop offset="0%" stop-color="#4f72ff" />
+                     <stop offset="100%" stop-color="#ee5b58" />
+                  </linearGradient>
+               </defs>
+               <text
+                  x="0"
+                  y="30"
+                  fill="url(#Gradient1)"
+                  font-size="30"
+                  font-weight="750"
+                  >
+                  Week 1
+               </text>
+            </svg>
+            <div class="bullet-list">
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Introduction to Python<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=YYXdXT2l-Gg"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Basics</a
+                              >
+                           (15:28)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.py4e.com/lessons"
+                              target="_blank"
+                              rel="noopener"
+                              >Python For Everybody</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/tutorial/"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Docs Tutorial</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Data Types and Control Structures<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=gCCVsvgR2KU&pp=ygURcHl0aG9uIGRhdGEgdHlwZXM%3D"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Data Types</a
+                              >
+                           (14:34)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=rfscVS0vtbw"
+                              target="_blank"
+                              rel="noopener"
+                              >Learn Python for Beginners</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/tutorial/controlflow.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Control Structures</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Functions and Modules<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=9Os0o3wzS_I"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Functions</a
+                              >
+                           (21:47)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.learnpython.org/en/Functions"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Functions</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/tutorial/modules.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Modules</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Object-Oriented Programming<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=JeznW_7DlB0"
+                              target="_blank"
+                              rel="noopener"
+                              >Object-Oriented Programming</a
+                              >
+                           (53:05)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.edx.org/course/python-programming-object-oriented-design?webview=false&campaign=Python+Programming%3A+Object-Oriented+Design&source=edx&product_category=course"
+                              target="_blank"
+                              rel="noopener"
+                              >OOP in Python</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/tutorial/classes.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Classes and Objects</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     File Handling and RegEx<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=Uh2ebFW8OYM&pp=ygUUcHl0aG9uIGZpbGUgaGFuZGxpbmc%3D"
+                              target="_blank"
+                              rel="noopener"
+                              >Reading and Writing to Files</a
+                              >
+                           (24:33)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.learnpython.org/en/Regular_Expressions"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Regular Expressions</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/tutorial/inputoutput.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Python File I/O</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/howto/regex.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Regular Expressions</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
             </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Data Types and Control Structures<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=gCCVsvgR2KU&pp=ygURcHl0aG9uIGRhdGEgdHlwZXM%3D"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Data Types</a
-                    >
-                    (14:34)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=rfscVS0vtbw"
-                      target="_blank"
-                      rel="noopener"
-                      >Learn Python for Beginners</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/tutorial/controlflow.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Control Structures</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Functions and Modules<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=9Os0o3wzS_I"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Functions</a
-                    >
-                    (21:47)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.learnpython.org/en/Functions"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Functions</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/tutorial/modules.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Modules</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Object-Oriented Programming<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=JeznW_7DlB0"
-                      target="_blank"
-                      rel="noopener"
-                      >Object-Oriented Programming</a
-                    >
-                    (53:05)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.edx.org/course/python-programming-object-oriented-design?webview=false&campaign=Python+Programming%3A+Object-Oriented+Design&source=edx&product_category=course"
-                      target="_blank"
-                      rel="noopener"
-                      >OOP in Python</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/tutorial/classes.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Classes and Objects</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                File Handling and RegEx<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=Uh2ebFW8OYM&pp=ygUUcHl0aG9uIGZpbGUgaGFuZGxpbmc%3D"
-                      target="_blank"
-                      rel="noopener"
-                      >Reading and Writing to Files</a
-                    >
-                    (24:33)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.learnpython.org/en/Regular_Expressions"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Regular Expressions</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/tutorial/inputoutput.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Python File I/O</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/howto/regex.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Regular Expressions</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
       <!-- Content Block 2 -->
       <div class="flex-item">
-        <div class="content-block">
-          <svg width="100%" height="40">
-            <defs>
-              <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stop-color="#4f72ff" />
-                <stop offset="100%" stop-color="#ee5b58" />
-              </linearGradient>
-            </defs>
-            <text
-              x="0"
-              y="30"
-              fill="url(#Gradient1)"
-              font-size="30"
-              font-weight="750"
-            >
-              Week 2
-            </text>
-          </svg>
-          <div class="bullet-list">
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Debugging and Testing<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=4jRfXluDmKY&pp=ygUTZGVidWdnaWduIGluIHB5dGhvbg%3D%3D"
-                      target="_blank"
-                      rel="noopener"
-                      >Debugging in Python</a
-                    >
-                    (14:02)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://realpython.com/pytest-python-testing/"
-                      target="_blank"
-                      rel="noopener"
-                      >Testing with PyTest</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/library/pdb.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Debugger</a
-                    >
-                  </h4>
-                </li>
-              </ul>
+         <div class="content-block">
+            <svg width="100%" height="40">
+               <defs>
+                  <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
+                     <stop offset="0%" stop-color="#4f72ff" />
+                     <stop offset="100%" stop-color="#ee5b58" />
+                  </linearGradient>
+               </defs>
+               <text
+                  x="0"
+                  y="30"
+                  fill="url(#Gradient1)"
+                  font-size="30"
+                  font-weight="750"
+                  >
+                  Week 2
+               </text>
+            </svg>
+            <div class="bullet-list">
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Debugging and Testing<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=4jRfXluDmKY&pp=ygUTZGVidWdnaWduIGluIHB5dGhvbg%3D%3D"
+                              target="_blank"
+                              rel="noopener"
+                              >Debugging in Python</a
+                              >
+                           (14:02)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://realpython.com/pytest-python-testing/"
+                              target="_blank"
+                              rel="noopener"
+                              >Testing with PyTest</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/library/pdb.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Debugger</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Error Handling and Exceptions<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=NIWwJbo-9_8"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Exceptions</a
+                              >
+                           (10:33)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.learnpython.org/en/Exception_Handling"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Exception Handling</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/tutorial/errors.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Errors and Exceptions</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Decorators and Generators<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=FsAPt_9Bf3U"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Decorators</a
+                              >
+                           (30:27)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.learnpython.org/en/Generators"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Generators</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/tutorial/controlflow.html#decorators"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Decorators</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/tutorial/controlflow.html#generators"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Generators</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Standard Library and Modules<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=CqvZ3vGoGs0&pp=ygUYcHl0aG9uIHN0YW5kYXJkIGxpYnJhcnkg"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Standard Library</a
+                              >
+                           (21:56)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.pluralsight.com/courses/python-standard-library-getting-started%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20target="
+                              target="_blank"
+                              rel="noopener"
+                              >Python Standard Library</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/library/index.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Standard Library</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Virtual Environments<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=KxvKCSwlUv8&pp=ygUedmlydHVhbCBlbnZpcm9ubWVudHMgaW4gcHl0aG9u"
+                              target="_blank"
+                              rel="noopener"
+                              >Virtual Environments in Python</a
+                              >
+                           (15:52)
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
             </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Error Handling and Exceptions<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=NIWwJbo-9_8"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Exceptions</a
-                    >
-                    (10:33)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.learnpython.org/en/Exception_Handling"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Exception Handling</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/tutorial/errors.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Errors and Exceptions</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Decorators and Generators<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=FsAPt_9Bf3U"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Decorators</a
-                    >
-                    (30:27)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.learnpython.org/en/Generators"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Generators</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/tutorial/controlflow.html#decorators"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Decorators</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/tutorial/controlflow.html#generators"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Generators</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Standard Library and Modules<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=CqvZ3vGoGs0&pp=ygUYcHl0aG9uIHN0YW5kYXJkIGxpYnJhcnkg"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Standard Library</a
-                    >
-                    (21:56)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.pluralsight.com/courses/python-standard-library-getting-started%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20target="
-                      target="_blank"
-                      rel="noopener"
-                      >Python Standard Library</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/library/index.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Standard Library</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Virtual Environments<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=KxvKCSwlUv8&pp=ygUedmlydHVhbCBlbnZpcm9ubWVudHMgaW4gcHl0aG9u"
-                      target="_blank"
-                      rel="noopener"
-                      >Virtual Environments in Python</a
-                    >
-                    (15:52)
-                  </h4>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
       <!-- Content Block 1 -->
       <div class="flex-item">
-        <div class="content-block">
-          <svg width="100%" height="40">
-            <defs>
-              <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stop-color="#4f72ff" />
-                <stop offset="100%" stop-color="#ee5b58" />
-              </linearGradient>
-            </defs>
-            <text
-              x="0"
-              y="30"
-              fill="url(#Gradient1)"
-              font-size="30"
-              font-weight="750"
-            >
-              Week 3
-            </text>
-          </svg>
-          <div class="bullet-list">
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Intro to Web Development<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=zuxzE7--RYM&pp=ygUfcHl0aG9uIHdlYiBkZXZlbG9wbWVudCBvdmVydmlldw%3D%3D"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Web Development</a
-                    >
-                    (21:16)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=sm1mokevMWk"
-                      target="_blank"
-                      rel="noopener"
-                      >Web Development with Python</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://www.tutorialspoint.com/python_web_development/index.htm"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Web Development</a
-                    >
-                  </h4>
-                </li>
-              </ul>
+         <div class="content-block">
+            <svg width="100%" height="40">
+               <defs>
+                  <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
+                     <stop offset="0%" stop-color="#4f72ff" />
+                     <stop offset="100%" stop-color="#ee5b58" />
+                  </linearGradient>
+               </defs>
+               <text
+                  x="0"
+                  y="30"
+                  fill="url(#Gradient1)"
+                  font-size="30"
+                  font-weight="750"
+                  >
+                  Week 3
+               </text>
+            </svg>
+            <div class="bullet-list">
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Intro to Web Development<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=zuxzE7--RYM&pp=ygUfcHl0aG9uIHdlYiBkZXZlbG9wbWVudCBvdmVydmlldw%3D%3D"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Web Development</a
+                              >
+                           (21:16)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=sm1mokevMWk"
+                              target="_blank"
+                              rel="noopener"
+                              >Web Development with Python</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://www.tutorialspoint.com/python_web_development/index.htm"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Web Development</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Flask Web Framework<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=MwZwr5Tvyxo"
+                              target="_blank"
+                              rel="noopener"
+                              >Flask Tutorial</a
+                              >
+                           (17:08)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=Z1RJmh_OqeA"
+                              target="_blank"
+                              rel="noopener"
+                              >Flask Web Development</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://flask.palletsprojects.com/en/2.0.x/"
+                              target="_blank"
+                              rel="noopener"
+                              >Flask Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Django Web Framework<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=0sMtoedWaf0&pp=ygUWcHl0aG9uIGRqYW5nbyBvdmVydmlldw%3D%3D"
+                              target="_blank"
+                              rel="noopener"
+                              >Django Web Framework</a
+                              >
+                           (8:10)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.djangoproject.com/start/"
+                              target="_blank"
+                              rel="noopener"
+                              >Django for Beginners</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.djangoproject.com/en/3.2/"
+                              target="_blank"
+                              rel="noopener"
+                              >Django Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     RESTful Web Services<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=s_ht4AKnWZg"
+                              target="_blank"
+                              rel="noopener"
+                              >RESTful Services with Flask</a
+                              >
+                           (15:20)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.udemy.com/course/python-flask-for-beginners/"
+                              target="_blank"
+                              rel="noopener"
+                              >Python and Flask for Beginners</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://flask-restful.readthedocs.io/en/latest/"
+                              target="_blank"
+                              rel="noopener"
+                              >Flask-RESTful Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Web Scraping with Python<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=XQgXKtPSzUI"
+                              target="_blank"
+                              rel="noopener"
+                              >Web Scraping with BeautifulSoup</a
+                              >
+                           (33:30)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.datacamp.com/courses/web-scraping-with-python"
+                              target="_blank"
+                              rel="noopener"
+                              >Web Scraping in Python</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://www.tutorialspoint.com/python_web_scraping/index.htm"
+                              target="_blank"
+                              rel="noopener"
+                              >Web Scraping Tutorial</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
             </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Flask Web Framework<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=MwZwr5Tvyxo"
-                      target="_blank"
-                      rel="noopener"
-                      >Flask Tutorial</a
-                    >
-                    (17:08)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=Z1RJmh_OqeA"
-                      target="_blank"
-                      rel="noopener"
-                      >Flask Web Development</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://flask.palletsprojects.com/en/2.0.x/"
-                      target="_blank"
-                      rel="noopener"
-                      >Flask Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Django Web Framework<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=0sMtoedWaf0&pp=ygUWcHl0aG9uIGRqYW5nbyBvdmVydmlldw%3D%3D"
-                      target="_blank"
-                      rel="noopener"
-                      >Django Web Framework</a
-                    >
-                    (8:10)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.djangoproject.com/start/"
-                      target="_blank"
-                      rel="noopener"
-                      >Django for Beginners</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.djangoproject.com/en/3.2/"
-                      target="_blank"
-                      rel="noopener"
-                      >Django Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                RESTful Web Services<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=s_ht4AKnWZg"
-                      target="_blank"
-                      rel="noopener"
-                      >RESTful Services with Flask</a
-                    >
-                    (15:20)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.udemy.com/course/python-flask-for-beginners/"
-                      target="_blank"
-                      rel="noopener"
-                      >Python and Flask for Beginners</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://flask-restful.readthedocs.io/en/latest/"
-                      target="_blank"
-                      rel="noopener"
-                      >Flask-RESTful Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Web Scraping with Python<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=XQgXKtPSzUI"
-                      target="_blank"
-                      rel="noopener"
-                      >Web Scraping with BeautifulSoup</a
-                    >
-                    (33:30)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.datacamp.com/courses/web-scraping-with-python"
-                      target="_blank"
-                      rel="noopener"
-                      >Web Scraping in Python</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://www.tutorialspoint.com/python_web_scraping/index.htm"
-                      target="_blank"
-                      rel="noopener"
-                      >Web Scraping Tutorial</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
       <!-- Content Block 1 -->
       <div class="flex-item">
-        <div class="content-block">
-          <svg width="100%" height="40">
-            <defs>
-              <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stop-color="#4f72ff" />
-                <stop offset="100%" stop-color="#ee5b58" />
-              </linearGradient>
-            </defs>
-            <text
-              x="0"
-              y="30"
-              fill="url(#Gradient1)"
-              font-size="30"
-              font-weight="750"
-            >
-              Week 4
-            </text>
-          </svg>
-          <div class="bullet-list">
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Data Visualization<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=3Xc3CA655Y4"
-                      target="_blank"
-                      rel="noopener"
-                      >Data Visualization with Matplotlib</a
-                    >
-                    (1:31:40)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.datacamp.com/courses/introduction-to-data-visualization-with-matplotlib"
-                      target="_blank"
-                      rel="noopener"
-                      >Data Visualization with Matplotlib</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://matplotlib.org/stable/contents.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Matplotlib Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
+         <div class="content-block">
+            <svg width="100%" height="40">
+               <defs>
+                  <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
+                     <stop offset="0%" stop-color="#4f72ff" />
+                     <stop offset="100%" stop-color="#ee5b58" />
+                  </linearGradient>
+               </defs>
+               <text
+                  x="0"
+                  y="30"
+                  fill="url(#Gradient1)"
+                  font-size="30"
+                  font-weight="750"
+                  >
+                  Week 4
+               </text>
+            </svg>
+            <div class="bullet-list">
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Data Visualization<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=3Xc3CA655Y4"
+                              target="_blank"
+                              rel="noopener"
+                              >Data Visualization with Matplotlib</a
+                              >
+                           (1:31:40)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.datacamp.com/courses/introduction-to-data-visualization-with-matplotlib"
+                              target="_blank"
+                              rel="noopener"
+                              >Data Visualization with Matplotlib</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://matplotlib.org/stable/contents.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Matplotlib Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Data Analysis with Pandas<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=dcqPhpY7tWk"
+                              target="_blank"
+                              rel="noopener"
+                              >Data Analysis with Pandas</a
+                              >
+                           (10:07)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.datacamp.com/courses/data-manipulation-with-pandas"
+                              target="_blank"
+                              rel="noopener"
+                              >Data Manipulation with Pandas</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://pandas.pydata.org/docs/"
+                              target="_blank"
+                              rel="noopener"
+                              >Pandas Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Machine Learning with Python<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=7eh4d6sabA0"
+                              target="_blank"
+                              rel="noopener"
+                              >Machine Learning with Python</a
+                              >
+                           (49:42)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.coursera.org/learn/machine-learning-with-python"
+                              target="_blank"
+                              rel="noopener"
+                              >Machine Learning with Python</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://scikit-learn.org/stable/documentation.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Scikit-Learn Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Deep Learning with Python<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=ujTCoH21GlA"
+                              target="_blank"
+                              rel="noopener"
+                              >Deep Learning with Python</a
+                              >
+                           (11:20)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.datacamp.com/courses/deep-learning-in-python"
+                              target="_blank"
+                              rel="noopener"
+                              >Deep Learning with Python</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://www.tensorflow.org/api_docs"
+                              target="_blank"
+                              rel="noopener"
+                              >TensorFlow Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Natural Language Processing<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=xvqsFTUsOmc"
+                              target="_blank"
+                              rel="noopener"
+                              >Natural Language Processing</a
+                              >
+                           (1:51:02)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.coursera.org/learn/codio-select-topics-python-natural-language-processing"
+                              target="_blank"
+                              rel="noopener"
+                              >Natural Language Processing</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://www.nltk.org/"
+                              target="_blank"
+                              rel="noopener"
+                              >NLTK Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
             </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Data Analysis with Pandas<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=dcqPhpY7tWk"
-                      target="_blank"
-                      rel="noopener"
-                      >Data Analysis with Pandas</a
-                    >
-                    (10:07)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.datacamp.com/courses/data-manipulation-with-pandas"
-                      target="_blank"
-                      rel="noopener"
-                      >Data Manipulation with Pandas</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://pandas.pydata.org/docs/"
-                      target="_blank"
-                      rel="noopener"
-                      >Pandas Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Machine Learning with Python<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=7eh4d6sabA0"
-                      target="_blank"
-                      rel="noopener"
-                      >Machine Learning with Python</a
-                    >
-                    (49:42)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.coursera.org/learn/machine-learning-with-python"
-                      target="_blank"
-                      rel="noopener"
-                      >Machine Learning with Python</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://scikit-learn.org/stable/documentation.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Scikit-Learn Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Deep Learning with Python<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=ujTCoH21GlA"
-                      target="_blank"
-                      rel="noopener"
-                      >Deep Learning with Python</a
-                    >
-                    (11:20)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.datacamp.com/courses/deep-learning-in-python"
-                      target="_blank"
-                      rel="noopener"
-                      >Deep Learning with Python</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://www.tensorflow.org/api_docs"
-                      target="_blank"
-                      rel="noopener"
-                      >TensorFlow Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Natural Language Processing<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=xvqsFTUsOmc"
-                      target="_blank"
-                      rel="noopener"
-                      >Natural Language Processing</a
-                    >
-                    (1:51:02)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.coursera.org/learn/codio-select-topics-python-natural-language-processing"
-                      target="_blank"
-                      rel="noopener"
-                      >Natural Language Processing</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://www.nltk.org/"
-                      target="_blank"
-                      rel="noopener"
-                      >NLTK Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
       <!-- Content Block 1 -->
       <div class="flex-item">
-        <div class="content-block">
-          <svg width="100%" height="40">
-            <defs>
-              <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stop-color="#4f72ff" />
-                <stop offset="100%" stop-color="#ee5b58" />
-              </linearGradient>
-            </defs>
-            <text
-              x="0"
-              y="30"
-              fill="url(#Gradient1)"
-              font-size="30"
-              font-weight="750"
-            >
-              Week 5
-            </text>
-          </svg>
-          <div class="bullet-list">
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Advanced Python Concepts<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=alSgAbyC7K8&list=PL7yh-TELLS1FuqLSjl5bgiQIEH25VEmIc&index=4&pp=iAQB"
-                      target="_blank"
-                      rel="noopener"
-                      >Argument Parsing</a
-                    >
-                    (15:51)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.udacity.com/course/intermediate-python-nanodegree--nd303"
-                      target="_blank"
-                      rel="noopener"
-                      >Intermediate Python</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://www.python.org/dev/peps/"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Enhancement Proposals</a
-                    >
-                  </h4>
-                </li>
-              </ul>
+         <div class="content-block">
+            <svg width="100%" height="40">
+               <defs>
+                  <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="0">
+                     <stop offset="0%" stop-color="#4f72ff" />
+                     <stop offset="100%" stop-color="#ee5b58" />
+                  </linearGradient>
+               </defs>
+               <text
+                  x="0"
+                  y="30"
+                  fill="url(#Gradient1)"
+                  font-size="30"
+                  font-weight="750"
+                  >
+                  Week 5
+               </text>
+            </svg>
+            <div class="bullet-list">
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Advanced Python Concepts<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=alSgAbyC7K8&list=PL7yh-TELLS1FuqLSjl5bgiQIEH25VEmIc&index=4&pp=iAQB"
+                              target="_blank"
+                              rel="noopener"
+                              >Argument Parsing</a
+                              >
+                           (15:51)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.udacity.com/course/intermediate-python-nanodegree--nd303"
+                              target="_blank"
+                              rel="noopener"
+                              >Intermediate Python</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://www.python.org/dev/peps/"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Enhancement Proposals</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Concurrency and Parallelism<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=MCs5OvhV9S4"
+                              target="_blank"
+                              rel="noopener"
+                              >Concurrency and Parallelism</a
+                              >
+                           (46:49)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.pluralsight.com/courses/python-concurrency-getting-started"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Concurrency</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/library/concurrency.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Threading and Multiprocessing</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     GUI Programming<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=D8-snVfekto"
+                              target="_blank"
+                              rel="noopener"
+                              >Python GUI Programming</a
+                              >
+                           (1:05:13)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.udemy.com/course/simple-gui-application-emi-calc-using-tkiner-in-python/"
+                              target="_blank"
+                              rel="noopener"
+                              >Python Programming using Tkinter</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://docs.python.org/3/library/tk.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Tkinter Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Python in Industry<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=onFobjvGgZI&pp=ygUScHl0aG9uIGluIGluZHVzdHJ5"
+                              target="_blank"
+                              rel="noopener"
+                              >How Netflix Uses Python</a
+                              >
+                           (8:47)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://realpython.com/tutorials/applications/"
+                              target="_blank"
+                              rel="noopener"
+                              >Real Python Applications</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bullet">
+                  <input type="checkbox" class="top-level-checkbox" />
+                  <h3>
+                     Big Data and Cloud<i
+                        class="fas fa-chevron-down toggle-icon"
+                        ></i>
+                  </h3>
+                  <ul class="bullet-content">
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Video:</b>
+                           <a
+                              href="https://www.youtube.com/watch?v=cUw3DsDpQCE&pp=ygUmcHl0aG9uIGluIGJpZyBkYXRhIGFuZCBjbG91ZCBjb21wdXRpbmc%3D"
+                              target="_blank"
+                              rel="noopener"
+                              >Big Data Analytics</a
+                              >
+                           (37:03)
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Course:</b>
+                           <a
+                              href="https://www.datacamp.com/courses/introduction-to-pyspark"
+                              target="_blank"
+                              rel="noopener"
+                              >Big Data with PySpark</a
+                              >
+                        </h4>
+                     </li>
+                     <li class="sub-bullet">
+                        <input type="checkbox" class="sub-checkbox" />
+                        <h4>
+                           <b>Material:</b>
+                           <a
+                              href="https://spark.apache.org/docs/latest/api/python/"
+                              target="_blank"
+                              rel="noopener"
+                              >PySpark Documentation</a
+                              >
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
             </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Concurrency and Parallelism<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=MCs5OvhV9S4"
-                      target="_blank"
-                      rel="noopener"
-                      >Concurrency and Parallelism</a
-                    >
-                    (46:49)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.pluralsight.com/courses/python-concurrency-getting-started"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Concurrency</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/library/concurrency.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Threading and Multiprocessing</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                GUI Programming<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=D8-snVfekto"
-                      target="_blank"
-                      rel="noopener"
-                      >Python GUI Programming</a
-                    >
-                    (1:05:13)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.udemy.com/course/simple-gui-application-emi-calc-using-tkiner-in-python/"
-                      target="_blank"
-                      rel="noopener"
-                      >Python Programming using Tkinter</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://docs.python.org/3/library/tk.html"
-                      target="_blank"
-                      rel="noopener"
-                      >Tkinter Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Python in Industry<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=onFobjvGgZI&pp=ygUScHl0aG9uIGluIGluZHVzdHJ5"
-                      target="_blank"
-                      rel="noopener"
-                      >How Netflix Uses Python</a
-                    >
-                    (8:47)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://realpython.com/tutorials/applications/"
-                      target="_blank"
-                      rel="noopener"
-                      >Real Python Applications</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-            <div class="bullet">
-              <input type="checkbox" class="top-level-checkbox" />
-              <h3>
-                Big Data and Cloud<i
-                  class="fas fa-chevron-down toggle-icon"
-                ></i>
-              </h3>
-              <ul class="bullet-content">
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Video:</b>
-                    <a
-                      href="https://www.youtube.com/watch?v=cUw3DsDpQCE&pp=ygUmcHl0aG9uIGluIGJpZyBkYXRhIGFuZCBjbG91ZCBjb21wdXRpbmc%3D"
-                      target="_blank"
-                      rel="noopener"
-                      >Big Data Analytics</a
-                    >
-                    (37:03)
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Course:</b>
-                    <a
-                      href="https://www.datacamp.com/courses/introduction-to-pyspark"
-                      target="_blank"
-                      rel="noopener"
-                      >Big Data with PySpark</a
-                    >
-                  </h4>
-                </li>
-                <li class="sub-bullet">
-                  <input type="checkbox" class="sub-checkbox" />
-                  <h4>
-                    <b>Material:</b>
-                    <a
-                      href="https://spark.apache.org/docs/latest/api/python/"
-                      target="_blank"
-                      rel="noopener"
-                      >PySpark Documentation</a
-                    >
-                  </h4>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
-    <!-- Dark mode switch -->
-    <div class="dark-mode-switch">
-      <input id="dark-mode-switch" type="checkbox" checked />
-      <label for="dark-mode-switch">Toggle dark mode</label>
-      <span><i class="fas fa-moon"></i></span>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        var totalSubCheckboxes = $(".sub-checkbox").length;
-
-        function updateProgressBar() {
-          var checkedSubCheckboxes = $(".sub-checkbox:checked").length;
-          var progress = Math.min(
-            (checkedSubCheckboxes / totalSubCheckboxes) * 100,
-            100
-          );
-
-          $("#progress-bar div").css("width", progress + "%");
-
-          // Save checkbox states to localStorage
-          $(".sub-checkbox").each(function() {
-            var checkboxId = $(this).attr("id");
-            var isChecked = $(this).prop("checked");
-            localStorage.setItem(checkboxId, isChecked);
-          });
-        }
-
-        function loadCheckboxStates() {
-          $(".sub-checkbox").each(function() {
-            var checkboxId = $(this).attr("id");
-            var isChecked = localStorage.getItem(checkboxId) === "true";
-            $(this).prop("checked", isChecked);
-          });
-}
-
-
-        $("#reset-button").click(function () {
-          $(".top-level-checkbox").prop("checked", false);
-          $(".sub-checkbox").prop("checked", false);
-          $(".content-block").css("opacity", 1); // Reset opacity
-          $(".bullet-content").slideUp(); // Added line to slide up all bullet contents
-          $(".toggle-icon").removeClass("rotated"); // Added line to remove rotated class from toggle icons
-          updateProgressBar();
-        });
-
-        $(".bullet h3").click(function () {
-          $(this).siblings(".bullet-content").slideToggle();
-          $(this).find(".toggle-icon").toggleClass("rotated");
-        });
-
-        $(".sub-checkbox").change(function () {
-          var $subCheckbox = $(this);
-          var $h4 = $subCheckbox.siblings("h4");
-          var isChecked = $subCheckbox.prop("checked");
-          $h4.toggleClass("crossed-out", isChecked);
-
-          var $bullet = $subCheckbox.closest(".bullet");
-          var $subCheckboxes = $bullet.find(".sub-checkbox");
-          var allSubCheckboxesChecked =
-            $subCheckboxes.length === $subCheckboxes.filter(":checked").length;
-
-          $bullet
-            .find(".top-level-checkbox")
-            .prop("checked", allSubCheckboxesChecked);
-          updateProgressBar();
-          updateContentBlockTransparency($bullet);
-        });
-
-        $(".top-level-checkbox").change(function () {
-          var isChecked = $(this).prop("checked");
-          $(this).siblings("h3").toggleClass("crossed-out", isChecked);
-          $(this)
-            .siblings(".bullet-content")
-            .find(".sub-checkbox")
-            .prop("checked", isChecked);
-          updateProgressBar();
-          updateContentBlockTransparency($(this).closest(".bullet"));
-        });
-
-        function updateContentBlockTransparency($bullet) {
-          var $contentBlock = $bullet.closest(".content-block");
-          var $topLevelCheckboxes = $contentBlock.find(".top-level-checkbox");
-          var allTopLevelCheckboxesChecked =
-            $topLevelCheckboxes.length ===
-            $topLevelCheckboxes.filter(":checked").length;
-
-          $contentBlock.css("opacity", allTopLevelCheckboxesChecked ? 0.5 : 1);
-        }
-
-        $("#dark-mode-switch").change(function () {
-          $("body").toggleClass("dark-mode");
-          updateProgressBar();
-          $(".bullet").each(function () {
-            updateContentBlockTransparency($(this));
-          });
-        });
-
-        updateProgressBar();
-      });
-    </script>
-    <!-- Add this code inside your <body> tag, at the bottom -->
-  </body>
+      <!-- Dark mode switch -->
+      <div class="dark-mode-switch">
+         <input id="dark-mode-switch" type="checkbox" checked />
+         <label for="dark-mode-switch">Toggle dark mode</label>
+         <span><i class="fas fa-moon"></i></span>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+         $(document).ready(function () {
+           var totalSubCheckboxes = $(".sub-checkbox").length;
+         
+           function updateProgressBar() {
+             var checkedSubCheckboxes = $(".sub-checkbox:checked").length;
+             var progress = Math.min(
+               (checkedSubCheckboxes / totalSubCheckboxes) * 100,
+               100
+             );
+         
+             $("#progress-bar div").css("width", progress + "%");
+         
+             // Save checkbox states to localStorage
+             $(".sub-checkbox").each(function() {
+               var checkboxId = $(this).attr("id");
+               var isChecked = $(this).prop("checked");
+               localStorage.setItem(checkboxId, isChecked);
+             });
+           }
+         
+           function loadCheckboxStates() {
+             $(".sub-checkbox").each(function() {
+               var checkboxId = $(this).attr("id");
+               var isChecked = localStorage.getItem(checkboxId) === "true";
+               $(this).prop("checked", isChecked);
+             });
+         }
+         
+         
+           $("#reset-button").click(function () {
+             $(".top-level-checkbox").prop("checked", false);
+             $(".sub-checkbox").prop("checked", false);
+             $(".content-block").css("opacity", 1); // Reset opacity
+             $(".bullet-content").slideUp(); // Added line to slide up all bullet contents
+             $(".toggle-icon").removeClass("rotated"); // Added line to remove rotated class from toggle icons
+             updateProgressBar();
+           });
+         
+           $(".bullet h3").click(function () {
+             $(this).siblings(".bullet-content").slideToggle();
+             $(this).find(".toggle-icon").toggleClass("rotated");
+           });
+         
+           $(".sub-checkbox").change(function () {
+             var $subCheckbox = $(this);
+             var $h4 = $subCheckbox.siblings("h4");
+             var isChecked = $subCheckbox.prop("checked");
+             $h4.toggleClass("crossed-out", isChecked);
+         
+             var $bullet = $subCheckbox.closest(".bullet");
+             var $subCheckboxes = $bullet.find(".sub-checkbox");
+             var allSubCheckboxesChecked =
+               $subCheckboxes.length === $subCheckboxes.filter(":checked").length;
+         
+             $bullet
+               .find(".top-level-checkbox")
+               .prop("checked", allSubCheckboxesChecked);
+             updateProgressBar();
+             updateContentBlockTransparency($bullet);
+           });
+         
+           $(".top-level-checkbox").change(function () {
+             var isChecked = $(this).prop("checked");
+             $(this).siblings("h3").toggleClass("crossed-out", isChecked);
+             $(this)
+               .siblings(".bullet-content")
+               .find(".sub-checkbox")
+               .prop("checked", isChecked);
+             updateProgressBar();
+             updateContentBlockTransparency($(this).closest(".bullet"));
+           });
+         
+           function updateContentBlockTransparency($bullet) {
+             var $contentBlock = $bullet.closest(".content-block");
+             var $topLevelCheckboxes = $contentBlock.find(".top-level-checkbox");
+             var allTopLevelCheckboxesChecked =
+               $topLevelCheckboxes.length ===
+               $topLevelCheckboxes.filter(":checked").length;
+         
+             $contentBlock.css("opacity", allTopLevelCheckboxesChecked ? 0.5 : 1);
+           }
+         
+           $("#dark-mode-switch").change(function () {
+             $("body").toggleClass("dark-mode");
+             updateProgressBar();
+             $(".bullet").each(function () {
+               updateContentBlockTransparency($(this));
+             });
+           });
+         
+           updateProgressBar();
+         });
+      </script>
+      <!-- Add this code inside your <body> tag, at the bottom -->
+   </body>
 </html>
