@@ -44,6 +44,12 @@
       .page-title {
         font-size: 20px !important;
       }
+
+      .logo {
+        width: 18px;
+        height: 20px;
+        margin-right: 10px; /* Add margin */
+      }
     }
 
 
@@ -289,11 +295,27 @@
       .bullet-list {
         margin-top: 20px; /* Added margin */
       }
+            .page-header {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        align-items: center;
+      }
+
+      .logo {
+        width: 45px;
+        height: 50px;
+        margin-right: 10px; /* Add margin */
+      }
+
     </style>
   </head>
   <body class="dark-mode">
+    <div class="page-header">
+    <img class="logo" src="./assets/python.png" alt="Python Logo">
     <!-- Title -->
-    <h1 class="page-title">Python Learning Plan</h1>
+    <h1 class="page-title">   Python Learning Plan</h1>
+    </div>
     <!-- Progress bar -->
     <div class="text-center">
       <div id="progress-bar"><div></div></div>
