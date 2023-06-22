@@ -26,18 +26,18 @@
       }
 
       .flex-item {
-        flex-basis: 100%;
+        flex-basis: calc(50% - 20px);
         margin-bottom: 2rem;
       }
 
-      @media (min-width: 768px) {
+      @media (max-width: 768px) {
         .flex-item {
-            flex-basis: calc(50% - 20px);
+            flex-basis: 100%;
         }
         /* Reduce the font size for mobile devices */
         .bullet h3 {
           display: inline;
-          font-size: 12px;
+          font-size: 14px !important;
           margin-right: 5px;
           white-space: nowrap;
           overflow: hidden;
@@ -45,7 +45,7 @@
           max-width: 100%;
       }
       .page-title {
-        font-size: 20px;
+        font-size: 20px !important;
       }
     }
 
