@@ -3,3 +3,8 @@ At this point, this is more or less a "scratch pad" for organizing my Python lea
 
 
 This code is currently hosted live at [pythonlearning.io](https://pythonlearning.io/).
+
+
+## Outstanding tasks
+
+[] Implement `localStorage` and `sessionStorage` to maintain progress state between browser refreshes
