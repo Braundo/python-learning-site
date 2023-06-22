@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Single-Page Website</title>
+    <title>Python Learning Plan</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css"
@@ -26,15 +26,28 @@
       }
 
       .flex-item {
-        flex-basis: calc(50% - 20px);
+        flex-basis: 100%;
         margin-bottom: 2rem;
       }
 
-      @media (max-width: 768px) {
+      @media (min-width: 768px) {
         .flex-item {
-          flex-basis: 100%;
+            flex-basis: calc(50% - 20px);
         }
+        /* Reduce the font size for mobile devices */
+        .bullet h3 {
+          display: inline;
+          font-size: 12px;
+          margin-right: 5px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 100%;
       }
+      .page-title {
+        font-size: 20px;
+      }
+    }
 
       .content-block {
         border-radius: 15px;
