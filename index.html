@@ -22,19 +22,20 @@
       .flex-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 20px;
       }
 
       .flex-item {
-        flex-basis: calc(50% - 20px);
+        flex-basis: 550px;
         margin-bottom: 2rem;
       }
-
+/*
       @media (max-width: 428px) {
         .flex-item {
             flex-basis: 100%;
         }
-        /* Reduce the font size for mobile devices */
+
         .bullet h3 {
           display: inline;
           font-size: 14px !important;
@@ -48,6 +49,17 @@
         font-size: 20px !important;
       }
     }
+*/
+      
+      footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
 
       .content-block {
         border-radius: 15px;
