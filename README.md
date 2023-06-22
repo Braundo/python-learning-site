@@ -9,3 +9,7 @@ This code is currently hosted live at [pythonlearning.io](https://pythonlearning
 - [ ] Implement `localStorage` and `sessionStorage` APIs to maintain progress state between browser refreshes
 - [ ] Break out JavaScript and CSS into their own files
 - [ ] Add a Kubernetes learning plan (longer term goal)
+
+### Legal Statements
+
+- _"Python" and the Python logos are trademarks or registered trademarks of the Python Software Foundation_
