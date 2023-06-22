@@ -7,3 +7,4 @@ This code is currently hosted live at [pythonlearning.io](https://pythonlearning
 ## To Do
 
 - [ ] Implement `localStorage` and `sessionStorage` APIs to maintain progress state between browser refreshes
+- [ ] Break out JavaScript and CSS into their own files
