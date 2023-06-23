@@ -115,6 +115,13 @@ body.dark-mode #progress-bar {
   margin-left: 10px;
   color: #000;
 }
+.dark-mode-switch-container {
+  position: sticky;
+  top: 10px; /* Adjust the top value as per your needs */
+  right: 10px; /* Adjust the right value as per your needs */
+  z-index: 999; /* Ensure a high z-index to appear above other elements */
+}
+
 body.dark-mode .dark-mode-switch span {
   color: #fff;
 }
