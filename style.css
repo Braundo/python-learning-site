@@ -37,6 +37,11 @@ body {
     gap: 20px;
     width: 100%; /* Force the container to take up the full width of the screen */
   }
+  .flex-item {
+    flex-basis: 550px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 
 @media only screen and (max-device-width: 767px) and (pointer: coarse) {
@@ -63,6 +68,11 @@ body {
     justify-content: flex-start; /* or 'flex-start' to align containers to the left */
     gap: 20px;
     width: 100%; /* Force the container to take up the full width of the screen */
+  }
+  .flex-item {
+    flex-basis: 550px;
+    width: 100%;
+    margin-bottom: 2rem;
   }
 }
 
