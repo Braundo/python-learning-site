@@ -26,8 +26,8 @@ body {
     font-size: 20px !important;
   }
   .logo {
-    width: 9px;
-    height: 10px;
+    width: 18px !important;
+    height: 20px !important;
     margin-right: 10px; /* Add margin */
   }
   .flex-container {
@@ -58,8 +58,8 @@ body {
     font-size: 20px !important;
   }
   .logo {
-    width: 9px;
-    height: 10px;
+    width: 18px !important;
+    height: 20px !important;
     margin-right: 10px; /* Add margin */
   }
   .flex-container {
