@@ -25,14 +25,18 @@ body {
   .page-title {
     font-size: 20px !important;
     text-align: left !important;
+    position: absolute !important;
   }
   .page-header {
     text-align: left !important;
+    margin-bottom: 20px !important;
   }
   .logo {
     width: 23px !important;
     height: 26px !important;
-    margin-right: 10px; /* Add margin */
+    margin-right: 250px !important; /* Add margin */
+    position: absolute !important;
+    display: inline-block !important;
   }
   .flex-container {
     display: flex;
@@ -60,15 +64,19 @@ body {
   }
   .page-header {
     text-align: left !important;
+    margin-bottom: 20px !important;
   }
   .page-title {
+    position: absolute !important;
     font-size: 20px !important;
     text-align: left !important;
   }
   .logo {
     width: 23px !important;
     height: 26px !important;
-    margin-right: 10px; /* Add margin */
+    margin-right: 250px !important; /* Add margin */
+    position: absolute !important;
+    display: inline-block !important;
   }
   .flex-container {
     display: flex;
@@ -109,12 +117,11 @@ body.dark-mode .content-block {
 /* Dark mode switch styles */
 .dark-mode-switch {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  right: 10px;
+  top: 5px;
   display: flex;
   align-items: right;
   margin-left: 100px;
-  z-index: 9999;
 }
 /* Dark mode styles for progress bar */
 body.dark-mode #progress-bar {
@@ -126,9 +133,8 @@ body.dark-mode #progress-bar {
 }
 .dark-mode-switch-container {
   position: sticky;
-  top: 10px; /* Adjust the top value as per your needs */
+  top: 5px; /* Adjust the top value as per your needs */
   right: 10px; /* Adjust the right value as per your needs */
-  z-index: 999; /* Ensure a high z-index to appear above other elements */
 }
 
 body.dark-mode .dark-mode-switch span {
