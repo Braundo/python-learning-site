@@ -30,6 +30,13 @@ body {
     height: 20px;
     margin-right: 10px; /* Add margin */
   }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* or 'flex-start' to align containers to the left */
+    gap: 20px;
+    width: 100%; /* Force the container to take up the full width of the screen */
+  }
 }
 
 @media only screen and (max-device-width: 767px) and (pointer: coarse) {
@@ -49,6 +56,13 @@ body {
     width: 18px;
     height: 20px;
     margin-right: 10px; /* Add margin */
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* or 'flex-start' to align containers to the left */
+    gap: 20px;
+    width: 100%; /* Force the container to take up the full width of the screen */
   }
 }
 
