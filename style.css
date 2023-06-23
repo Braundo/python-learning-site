@@ -26,6 +26,9 @@ body {
     font-size: 20px !important;
     text-align: left !important;
   }
+  .page-header {
+    text-align: left !important;
+  }
   .logo {
     width: 23px !important;
     height: 26px !important;
@@ -54,6 +57,9 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
+  }
+  .page-header {
+    text-align: left !important;
   }
   .page-title {
     font-size: 20px !important;
