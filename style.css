@@ -104,7 +104,7 @@ body {
 
 .content-block {
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   background-color: #f8f8f8;
 }
@@ -179,6 +179,27 @@ body.dark-mode #progress-bar {
   border: none;
   border-radius: 6px;
   padding: 5px 10px;
+  color: #4c4c4c;
+  font-size: 20px;
+  background-color: rgb(248, 248, 248);
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  margin-bottom: 80px;
+}
+#reset-button:hover {
+  background-color: rgb(238, 238, 238);
+}
+#reset-button:active {
+  transform: scale(0.95);
+}
+
+body.dark-mode #reset-button {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
   color: #fff;
   font-size: 20px;
   background-color: rgb(68, 70, 83);
@@ -187,11 +208,8 @@ body.dark-mode #progress-bar {
   transition: background-color 0.3s;
   margin-bottom: 80px;
 }
-#reset-button:hover {
+body.dark-mode #reset-button:hover {
   background-color: rgb(101, 104, 123);
-}
-#reset-button:active {
-  transform: scale(0.95);
 }
 
 a {
