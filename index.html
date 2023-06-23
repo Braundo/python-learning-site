@@ -8,6 +8,8 @@
       <link
          rel="stylesheet"
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="./style.css">
@@ -16,17 +18,14 @@
    </head>
    <body class="dark-mode">
       <div class="page-header">
+         
+         <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <span id="dark-mode-icon" class="dark-mode-icon">&#9791;</span> <!-- Moon icon for light mode -->
+          </div>
+
          <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Python_logo_01.svg" alt="Python Logo">
          <!-- Title -->
          <h1 class="page-title">Python Learning Plan</h1>
-         <!-- Dark mode switch -->
-   <div id="dark-mode-switch-container">
-      <div class="dark-mode-switch">
-         <input id="dark-mode-switch" type="checkbox" checked />
-         <label for="dark-mode-switch">Toggle dark mode</label>
-         <span><i class="fas fa-moon"></i></span>
-      </div>
-   </div>
       </div>
       <!-- Progress bar -->
       <div class="text-center">

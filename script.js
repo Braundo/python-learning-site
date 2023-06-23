@@ -135,13 +135,21 @@ $(document).ready(function () {
     $contentBlock.css("opacity", allTopLevelCheckboxesChecked ? 0.5 : 1);
   }
 
-  $("#dark-mode-switch").change(function () {
-    $("body").toggleClass("dark-mode");
-    updateProgressBar();
-    $(".bullet").each(function () {
-      updateContentBlockTransparency($(this));
-    });
-  });
-
   updateProgressBar();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var body = document.body;
+  var icon = document.getElementById('dark-mode-icon');
+
+  // Initialize icon based on initial dark mode state
+  icon.innerHTML = body.classList.contains('dark-mode') ? '&#9728;' : '&#9790;';
+});
+
+function toggleDarkMode() {
+  var body = document.body;
+  body.classList.toggle('dark-mode');
+
+  var icon = document.getElementById('dark-mode-icon');
+  icon.innerHTML = body.classList.contains('dark-mode') ? '&#9728;' : '&#9790;';
+}

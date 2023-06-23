@@ -124,65 +124,12 @@ body.dark-mode {
 body.dark-mode .content-block {
   background-color: rgb(68, 70, 83);
 }
-/* Dark mode switch styles */
-.dark-mode-switch {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  display: flex;
-  align-items: center;
-  margin-left: 100px;
-}
+
 /* Dark mode styles for progress bar */
 body.dark-mode #progress-bar {
   background-color: rgb(68, 70, 83);
 }
-.dark-mode-switch span {
-  margin-left: 10px;
-  color: #000;
-}
-.dark-mode-switch-container {
-  position: sticky;
-  top: 5px; /* Adjust the top value as per your needs */
-  right: 10px; /* Adjust the right value as per your needs */
-  align-items: center !important;
-}
 
-body.dark-mode .dark-mode-switch span {
-  color: #fff;
-}
-.dark-mode-switch input {
-  position: absolute;
-  left: -9999px;
-}
-.dark-mode-switch label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 52px;
-  height: 27px;
-  background: rgb(239, 239, 234);
-  display: block;
-  border-radius: 100px;
-  position: relative;
-}
-.dark-mode-switch label:after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 90px;
-  transition: 0.3s;
-}
-.dark-mode-switch input:checked + label {
-  background: #1ba1e2;
-}
-.dark-mode-switch input:checked + label:after {
-  left: calc(100% - 5px);
-  transform: translateX(-100%);
-}
 /* Style the bullet text */
 .bullet h3 {
   display: inline;
@@ -332,3 +279,35 @@ input[type="checkbox"]:hover {
   height: 50px;
   margin-right: 10px; /* Add margin */
 }
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent; /* Light mode button background color */
+  cursor: pointer;
+  border: 1px solid;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+
+}
+
+  /* CSS styles for moon and sun icons */
+  .dark-mode-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .dark-mode-icon {
+    font-size: 24px;
+    position: relative;
+    z-index: 1; /* Ensures the icon is displayed on top of the filled moon */
+  }
