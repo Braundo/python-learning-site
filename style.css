@@ -12,7 +12,7 @@ body {
   flex-basis: 550px;
   margin-bottom: 2rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .bullet h3 {
     display: inline;
     font-size: 14px !important;
@@ -31,6 +31,27 @@ body {
     margin-right: 10px; /* Add margin */
   }
 }
+
+@media only screen and (max-device-width: 767px) and (pointer: coarse) {
+  .bullet h3 {
+    display: inline;
+    font-size: 14px !important;
+    margin-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  .page-title {
+    font-size: 20px !important;
+  }
+  .logo {
+    width: 18px;
+    height: 20px;
+    margin-right: 10px; /* Add margin */
+  }
+}
+
 .content-block {
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -168,6 +189,7 @@ body.dark-mode .dark-mode-switch span {
 #reset-button:active {
   transform: scale(0.95);
 }
+
 a {
   color: #4edc53;
 }
