@@ -138,18 +138,19 @@ $(document).ready(function () {
   updateProgressBar();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   var body = document.body;
-  var icon = document.getElementById('dark-mode-icon');
+  var icon = document.getElementById("dark-mode-icon");
 
   // Initialize icon based on initial dark mode state
-  icon.innerHTML = body.classList.contains('dark-mode') ? '&#9728;' : '&#9790;';
+  icon.innerHTML = body.classList.contains("dark-mode") ? "&#9728;" : "&#9790;";
 });
 
 function toggleDarkMode() {
   var body = document.body;
-  body.classList.toggle('dark-mode');
+  body.classList.toggle("dark-mode");
 
-  var icon = document.getElementById('dark-mode-icon');
-  icon.innerHTML = body.classList.contains('dark-mode') ? '&#9728;' : '&#9790;';
+  var icon = document.getElementById("dark-mode-icon");
+  var darkModeToggle = document.querySelector(".dark-mode-toggle");
+  darkModeToggle.classList.toggle("dark");
 }
