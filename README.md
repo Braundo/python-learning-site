@@ -17,3 +17,4 @@ This code is currently hosted live at [pythonlearning.io](https://www.pythonlear
 
 - _"Python" and the Python logos are trademarks or registered trademarks of the Python Software Foundation_
 - _"Kubernetes", "K8s" and the Kubernetes logo are trademarks or registered trademarks of the Linux Foundation_
+- _"Docker" and the Docker logo are trademarks or registered trademarks of Docker, Inc._
