@@ -350,6 +350,7 @@ input[type="checkbox"]:hover {
   display: flex;
   width: 650px;
   background-color: #171717;
+  color: #e2e2e2;
   height: 45px;
   align-items: center;
   justify-content: left;
