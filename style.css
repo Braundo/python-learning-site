@@ -75,6 +75,12 @@ body {
     text-overflow: ellipsis;
     max-width: 100%;
   }
+  .copy-btn {
+    display: none;
+  }
+  .make-snippet {
+    display: none;
+  }
   .page-header {
     text-align: left !important;
     margin-bottom: 20px !important;
