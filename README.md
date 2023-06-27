@@ -1,6 +1,4 @@
-![](./assets/python.png.png "Python")
-
-# Python Learning Site
+<h1><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Python_logo_01.svg" height="40px"> Python Learning Site <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" height="40px" width="40px"/></h1>
 
 At this point, this is more or less a "scratch pad" for organizing my Python learning curriculum. If you find the site, linked content, or any of this source code helpful - great!
 
