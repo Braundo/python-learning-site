@@ -1,6 +1,9 @@
 body {
   font-family: "Inter", Arial, sans-serif;
   background-color: #f9f9f9;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .flex-container {
   display: flex;
@@ -331,4 +334,57 @@ input[type="checkbox"]:hover {
 
 .dark-mode-toggle.dark .fa-sun {
   display: none;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 200px !important;
+}
+
+.content-wrapper {
+  flex: 1;
+  margin-bottom: 20px;
+}
+.make-snippet {
+  position: relative;
+  display: flex;
+  width: 650px;
+  background-color: #171717;
+  height: 45px;
+  align-items: center;
+  justify-content: left;
+  border-radius: 9px;
+  font-family: "Fira Code";
+  font-size: 20px;
+  padding-left: 1em;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #50fa7b;
+  color: #44475a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Fira Code";
+  font-size: 20px;
+}
+.copy-btn:hover {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #b9ffcb;
+  color: #44475a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Fira Code";
+}
+.copy-btn: {
+  -webkit-animation: wiggle 350ms ease alternate;
+  animation: wiggle 350ms ease alternate;
 }

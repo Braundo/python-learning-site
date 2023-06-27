@@ -16,6 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
    </head>
+   <div class="content-wrapper">
    <body class="dark-mode">
       <div class="page-header">
          
@@ -1325,4 +1326,52 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="./script.js"></script>
    </body>
+</div>
+   <footer>
+      <br><br><br>
+      <hr>
+            <br><br><center>
+Interested in running this locally for some reason? With Docker installed, do the following:
+            <ul><div class="make-snippet" align="left">
+  pull braundo30/python-learning-site
+</div><br>
+<div class="make-snippet" align="left">
+  run -d -p 80:80 braundo30/python-learning-site
+</div>
+<p align="center">&nbsp;&nbsp;Open your browser to <a href="http://localhost">localhost:80</a></p>
+</ul></center>
+<script>
+  (function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    var snippetDivs = document.querySelectorAll(".make-snippet");
+    snippetDivs.forEach(function (snippetDiv) {
+      var snippetCode = snippetDiv.innerHTML.trim().replace(/</g, "&lt;");
+      var snippetPre = "<pre><code>" + snippetCode + "</code></pre>";
+      var snippetCopyBtn = '<button class="copy-btn">copy</button>';
+      snippetDiv.innerHTML = snippetPre + snippetCopyBtn;
+    });
+    var copyBtns = document.querySelectorAll(".copy-btn");
+    copyBtns.forEach(function (copyBtn) {
+      copyBtn.addEventListener("click", function () {
+        var preElem = this.previousElementSibling;
+        var codeElem = preElem.querySelector("code");
+        var codeText = "docker "+ codeElem.textContent;
+        var tempTextarea = document.createElement("textarea");
+        tempTextarea.value = codeText;
+        document.body.appendChild(tempTextarea);
+        tempTextarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextarea);
+        this.textContent = "copied!";
+        setTimeout(function () {
+          copyBtn.textContent = "copy";
+        }, 3000);
+      });
+    });
+  });
+})();
+</script>
+      </section>
+    </div>
+   </footer>
 </html>
