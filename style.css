@@ -31,7 +31,7 @@ body {
   .make-snippet {
     display: none;
   }
-  .mobile-hider: {
+  .mobile-hider {
     display: none;
   }
   .page-title {
@@ -90,7 +90,7 @@ body {
   .make-snippet {
     display: none;
   }
-  .mobile-hider: {
+  .mobile-hider {
     display: none;
   }
   .page-header {
