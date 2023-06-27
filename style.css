@@ -25,6 +25,15 @@ body {
     text-overflow: ellipsis;
     max-width: 110%;
   }
+  .copy-btn {
+    display: none;
+  }
+  .make-snippet {
+    display: none;
+  }
+  .mobile-hider: {
+    display: none;
+  }
   .page-title {
     font-size: 20px !important;
     text-align: left !important;
@@ -79,6 +88,9 @@ body {
     display: none;
   }
   .make-snippet {
+    display: none;
+  }
+  .mobile-hider: {
     display: none;
   }
   .page-header {
@@ -394,4 +406,8 @@ input[type="checkbox"]:hover {
 .copy-btn: {
   -webkit-animation: wiggle 350ms ease alternate;
   animation: wiggle 350ms ease alternate;
+}
+
+.mobile-hider: {
+  border: none;
 }
