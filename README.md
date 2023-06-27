@@ -1,4 +1,4 @@
-# Python Learning Site
+![](./assets/python.png.png "Python")# Python Learning Site
 
 At this point, this is more or less a "scratch pad" for organizing my Python learning curriculum. If you find the site, linked content, or any of this source code helpful - great!
 
@@ -16,3 +16,4 @@ This code is currently hosted live at [pythonlearning.io](https://www.pythonlear
 ### Legal Statements
 
 - _"Python" and the Python logos are trademarks or registered trademarks of the Python Software Foundation_
+- _"Kubernetes", "K8s" and the Kubernetes logo are trademarks or registered trademarks of the Linux Foundation_
