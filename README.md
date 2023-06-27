@@ -6,12 +6,12 @@ This code is currently hosted live at [pythonlearning.io](https://www.pythonlear
 
 ## To Do
 
-- [ ] Implement `localStorage` and `sessionStorage` APIs to maintain progress state between browser refreshes
 - [x] ~~Break out JavaScript and CSS into their own files~~
-- [ ] Add a Kubernetes learning plan (longer term goal)
 - [x] ~~Have the **Reset Progress** button toggle it's style in light mode~~
 - [x] ~~Update dark mode/light mode toggle icons~~
+- [ ] Implement `localStorage` and `sessionStorage` APIs to maintain progress state between browser refreshes
 - [ ] Update mobile checkmarks to fill box instead of checkmark
+- [ ] Add a Kubernetes learning plan (longer term goal)
 
 ### Legal Statements
 
