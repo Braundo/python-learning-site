@@ -60,24 +60,20 @@ $(document).ready(function () {
       var isChecked = $(this).prop("checked");
       localStorage.setItem(checkboxId, isChecked);
     });
+
+    // Load the state from localStorage when the page loads
+    $(".sub-checkbox").each(function () {
+      var checkboxId = $(this).attr("id");
+      var isChecked = $(this).prop("checked");
+      localStorage.getItem(checkboxId, isChecked);
+      if (isChecked === 'true') {
+        checkbox.checked = true;
+      } else {
+        checkbox.checked = false;
+      }
+    });
   }
 
-  window.onload = function() {
-    // Load the state from localStorage when the page loads
-    var checkbox = document.getElementById('myCheckbox');
-    var isChecked = localStorage.getItem('checkboxState');
-    if (isChecked === 'true') {
-      checkbox.checked = true;
-    } else {
-      checkbox.checked = false;
-    }
-  
-    // Save the state to localStorage whenever the checkbox state changes
-    checkbox.onchange = function() {
-      localStorage.setItem('checkboxState', this.checked);
-    }
-  }
-  
 
   $("#reset-button").click(function () {
     $(".top-level-checkbox").prop("checked", false);
