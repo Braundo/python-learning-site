@@ -10,24 +10,13 @@ $(document).ready(function () {
     ),
     checkboxesLength = checkboxes.length,
     progress = document.querySelector(".progress__bar"),
-    counter = document.querySelector(".progress__count"),
-    reset = document.querySelector(".progress__reset");
-  function loadIds() {
-    for (let a = 0; a < checkboxesLength; a += 1) {
-      const b = (a) => a.replace(/[ ,.!?;:'-]/g, "");
-      (checkboxes[a].id = `${b(
-        checkboxes[a].nextSibling.nextSibling.innerText
-      ).toLowerCase()}`),
-        checkboxes[a].nextSibling.setAttribute(
-          "for",
-          `${b(checkboxes[a].nextSibling.nextSibling.innerText).toLowerCase()}`
-        );
-    }
-  }
-  function updateStorage(a) {
+    counter = document.querySelector(".progress__count")
+
+// not sure this is needed at the moment
+/*   function updateStorage(a) {
     (checkboxValues[a.id] = a.checked),
       localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
-  }
+  } */
   function countChecked() {
     if ("checkbox" === this.type) {
       const a = this.parentNode.parentNode.parentNode,
@@ -55,15 +44,6 @@ $(document).ready(function () {
       (checkboxValues.globalCounter = a),
       updateStorage(this);
   }
-  function loadValues() {
-    const a = checkboxValues.globalCounter || 0;
-    (counter.innerText = `${a}/${checkboxesLength}`),
-      Object.keys(checkboxValues).forEach((a) => {
-        "globalCounter" !== a &&
-          (document.getElementById(a).checked = checkboxValues[a]);
-      }),
-      countChecked();
-  }
 
   function updateProgressBar() {
     var checkedSubCheckboxes = $(".sub-checkbox:checked").length;
@@ -80,6 +60,24 @@ $(document).ready(function () {
       var isChecked = $(this).prop("checked");
       localStorage.setItem(checkboxId, isChecked);
     });
+  }
+
+  // Save checkbox states to localStorage
+  $(".sub-checkbox").each(function () {
+    var checkboxId = $(this).attr("id");
+    var isChecked = $(this).prop("checked");
+    localStorage.setItem(checkboxId, isChecked);
+  });
+  
+  window.onload = function() {
+    // Load the state from localStorage when the page loads
+    var checkbox = document.getElementById('myCheckbox');
+    var isChecked = localStorage.getItem('checkboxState');
+    if (isChecked === 'true') {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
   }
 
   $("#reset-button").click(function () {
@@ -153,20 +151,4 @@ function toggleDarkMode() {
   var icon = document.getElementById("dark-mode-icon");
   var darkModeToggle = document.querySelector(".dark-mode-toggle");
   darkModeToggle.classList.toggle("dark");
-}
-
-// Load the state from localStorage when the page loads
-window.onload = function() {
-  var checkbox = document.getElementById('myCheckbox');
-  var isChecked = localStorage.getItem('checkboxState');
-  if (isChecked === 'true') {
-    checkbox.checked = true;
-  } else {
-    checkbox.checked = false;
-  }
-}
-
-// Save the state to localStorage whenever the checkbox state changes
-document.getElementById('myCheckbox').onchange = function() {
-  localStorage.setItem('checkboxState', this.checked);
 }
