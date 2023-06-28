@@ -29,8 +29,6 @@ $(".sub-checkbox").each(function () {
 $(document).ready(function() {
   // Load the state from localStorage when the page loads
   $(".sub-checkbox").each(function () {
-    var checkboxId = $(this).attr("id");
-    var isChecked = localStorage.getItem(checkboxId); // remove second argument
     if (isChecked == 'true') { // compare with double equals, not triple
       $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
     } else {
