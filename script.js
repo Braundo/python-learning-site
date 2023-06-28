@@ -54,24 +54,26 @@ $(document).ready(function () {
 
     $("#progress-bar div").css("width", progress + "%");
 
-    // Save checkbox states to localStorage
-    $(".sub-checkbox").each(function () {
-      var checkboxId = $(this).attr("id");
-      var isChecked = $(this).prop("checked");
-      localStorage.setItem(checkboxId, isChecked);
-    });
+// Save checkbox states to localStorage
+$(".sub-checkbox").each(function () {
+  var checkboxId = $(this).attr("id");
+  var isChecked = $(this).prop("checked");
+  localStorage.setItem(checkboxId, isChecked);
+});
 
-    // Load the state from localStorage when the page loads
-    $(".sub-checkbox").each(function () {
-      var checkboxId = $(this).attr("id");
-      var isChecked = $(this).prop("checked");
-      localStorage.getItem(checkboxId, isChecked);
-      if (isChecked === 'true') {
-        checkbox.checked = true;
-      } else {
-        checkbox.checked = false;
-      }
-    });
+$(document).ready(function() {
+  // Load the state from localStorage when the page loads
+  $(".sub-checkbox").each(function () {
+    var checkboxId = $(this).attr("id");
+    var isChecked = localStorage.getItem(checkboxId); // remove second argument
+    if (isChecked == 'true') { // compare with double equals, not triple
+      $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
+    } else {
+      $(this).prop("checked", false); // use jQuery syntax to set the checkbox state
+    }
+  });
+});
+
   }
 
 
