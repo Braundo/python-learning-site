@@ -154,3 +154,23 @@ function toggleDarkMode() {
   var darkModeToggle = document.querySelector(".dark-mode-toggle");
   darkModeToggle.classList.toggle("dark");
 }
+
+import React, { useState } from "react";
+
+function Checkbox() {
+  const [checked, setChecked] = useState(false);
+
+  function handleChange(event) {
+    setChecked(event.target.checked);
+  }
+
+  return (
+    <input
+      type="checkbox"
+      checked={checked}
+      onChange={handleChange}
+    />
+  );
+}
+
+export default Checkbox;
