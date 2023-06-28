@@ -1,49 +1,14 @@
 $(document).ready(function () {
   var totalSubCheckboxes = $(".sub-checkbox").length;
 
-  const checkboxValues =
-      JSON.parse(localStorage.getItem("checkboxValues")) || {},
-    buttons = Array.from(document.querySelectorAll(".checklist-item__expand")),
-    labels = Array.from(document.querySelectorAll(".checklist-item__title")),
-    checkboxes = Array.from(
-      document.querySelectorAll('input[type="checkbox"]')
-    ),
-    checkboxesLength = checkboxes.length,
-    progress = document.querySelector(".progress__bar"),
-    counter = document.querySelector(".progress__count")
+
 
 // not sure this is needed at the moment
 /*   function updateStorage(a) {
     (checkboxValues[a.id] = a.checked),
       localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
   } */
-  function countChecked() {
-    if ("checkbox" === this.type) {
-      const a = this.parentNode.parentNode.parentNode,
-        b =
-          a.querySelectorAll("input:checked").length /
-          a.querySelectorAll(".checklist-item").length;
-      a.querySelector(
-        ".checklist__percentage-border"
-      ).style.transform = `scaleX(${b})`;
-    } else
-      Array.from(document.querySelectorAll(".checklist")).forEach((a) => {
-        const b =
-          a.querySelectorAll("input:checked").length /
-          a.querySelectorAll(".checklist-item").length;
-        a.querySelector(
-          ".checklist__percentage-border"
-        ).style.transform = `scaleX(${b})`;
-      });
-    let a = 0;
-    Array.from(document.querySelectorAll("input:checked")).forEach(() => {
-      a += 1;
-    }),
-      (counter.innerText = `${a}/${checkboxesLength}`),
-      (progress.style.transform = `scaleX(${a / checkboxesLength})`),
-      (checkboxValues.globalCounter = a),
-      updateStorage(this);
-  }
+
 
   function updateProgressBar() {
     var checkedSubCheckboxes = $(".sub-checkbox:checked").length;
@@ -145,7 +110,6 @@ function toggleDarkMode() {
   var body = document.body;
   body.classList.toggle("dark-mode");
 
-  var icon = document.getElementById("dark-mode-icon");
   var darkModeToggle = document.querySelector(".dark-mode-toggle");
   darkModeToggle.classList.toggle("dark");
 }
