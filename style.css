@@ -180,7 +180,7 @@ body.dark-mode #progress-bar {
 #progress-bar {
   width: 100%;
   overflow: hidden;
-  background-color: #e2e2e2;
+  background-color: #e6e6e6;
   border-radius: 12px;
   position: relative;
   padding: 3px;
@@ -234,8 +234,13 @@ body.dark-mode #reset-button:hover {
 }
 
 a {
+  color: #3083ff;
+}
+
+body.dark-mode a {
   color: #4edc53;
 }
+
 /* Style the sub-bullet text */
 .sub-bullet {
   display: flex;
@@ -373,7 +378,23 @@ body.dark-mode .small-logo {
   flex: 1;
   margin-bottom: 20px;
 }
+
 .make-snippet {
+  position: relative;
+  display: flex;
+  width: 650px;
+  background-color: #D8DEE9;
+  color: #3f5173;
+  height: 45px;
+  align-items: center;
+  justify-content: left;
+  border-radius: 9px;
+  font-family: "Fira Code";
+  font-size: 20px;
+  padding-left: 1em;
+}
+
+body.dark-mode .make-snippet {
   position: relative;
   display: flex;
   width: 650px;
@@ -388,7 +409,7 @@ body.dark-mode .small-logo {
   padding-left: 1em;
 }
 
-.copy-btn {
+body.dark-mode .copy-btn {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -401,7 +422,7 @@ body.dark-mode .small-logo {
   font-family: "Fira Code";
   font-size: 20px;
 }
-.copy-btn:hover {
+body.dark-mode .copy-btn:hover {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -413,6 +434,33 @@ body.dark-mode .small-logo {
   cursor: pointer;
   font-family: "Fira Code";
 }
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #3083ff;
+  color: #EAEAEA;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Fira Code";
+  font-size: 20px;
+}
+.copy-btn:hover {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #78aeff;
+  color: #EAEAEA;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Fira Code";
+}
+
 .copy-btn: {
   -webkit-animation: wiggle 350ms ease alternate;
   animation: wiggle 350ms ease alternate;
