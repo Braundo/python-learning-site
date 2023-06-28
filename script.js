@@ -155,22 +155,18 @@ function toggleDarkMode() {
   darkModeToggle.classList.toggle("dark");
 }
 
-import React, { useState } from "react";
-
-function Checkbox() {
-  const [checked, setChecked] = useState(false);
-
-  function handleChange(event) {
-    setChecked(event.target.checked);
+// Load the state from localStorage when the page loads
+window.onload = function() {
+  var checkbox = document.getElementById('myCheckbox');
+  var isChecked = localStorage.getItem('checkboxState');
+  if (isChecked === 'true') {
+    checkbox.checked = true;
+  } else {
+    checkbox.checked = false;
   }
-
-  return (
-    <input
-      type="checkbox"
-      checked={checked}
-      onChange={handleChange}
-    />
-  );
 }
 
-export default Checkbox;
+// Save the state to localStorage whenever the checkbox state changes
+document.getElementById('myCheckbox').onchange = function() {
+  localStorage.setItem('checkboxState', this.checked);
+}
