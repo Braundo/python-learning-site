@@ -62,13 +62,6 @@ $(document).ready(function () {
     });
   }
 
-  // Save checkbox states to localStorage
-  $(".sub-checkbox").each(function () {
-    var checkboxId = $(this).attr("id");
-    var isChecked = $(this).prop("checked");
-    localStorage.setItem(checkboxId, isChecked);
-  });
-  
   window.onload = function() {
     // Load the state from localStorage when the page loads
     var checkbox = document.getElementById('myCheckbox');
@@ -78,7 +71,13 @@ $(document).ready(function () {
     } else {
       checkbox.checked = false;
     }
+  
+    // Save the state to localStorage whenever the checkbox state changes
+    checkbox.onchange = function() {
+      localStorage.setItem('checkboxState', this.checked);
+    }
   }
+  
 
   $("#reset-button").click(function () {
     $(".top-level-checkbox").prop("checked", false);
