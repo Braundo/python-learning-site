@@ -34,22 +34,13 @@ $(".sub-checkbox").each(function () {
   });
 
   $(".sub-checkbox").change(function () {
-    var $subCheckbox = $(this);
-    var $h4 = $subCheckbox.siblings("h4");
-    var isChecked = $subCheckbox.prop("checked");
-    $h4.toggleClass("crossed-out", isChecked);
-
-    var $bullet = $subCheckbox.closest(".bullet");
-    var $subCheckboxes = $bullet.find(".sub-checkbox");
-    var allSubCheckboxesChecked =
-      $subCheckboxes.length === $subCheckboxes.filter(":checked").length;
-
-    $bullet
-      .find(".top-level-checkbox")
-      .prop("checked", allSubCheckboxesChecked);
+    var checkboxId = $(this).attr("id");
+    var isChecked = $(this).prop("checked");
+    localStorage.setItem(checkboxId, isChecked);
     updateProgressBar();
-    updateContentBlockTransparency($bullet);
+    updateContentBlockTransparency($(this).closest(".bullet"));
   });
+  
 
   $(".top-level-checkbox").change(function () {
     var isChecked = $(this).prop("checked");
@@ -94,17 +85,7 @@ function toggleDarkMode() {
 const checkboxes = document.querySelectorAll("input[type='checkbox']");
 
 for (const checkbox of checkboxes) {
-  checkbox.addEventListener("change", () => {
-    localStorage.setItem("checkboxes", JSON.stringify(checkboxes));
-  });
-}
-
-const checkboxesJSON = localStorage.getItem("checkboxes");
-
-if (checkboxesJSON) {
-  const checkboxes = JSON.parse(checkboxesJSON);
-
-  for (const checkbox of checkboxes) {
-    checkbox.checked = true;
-  }
+  const checkboxId = checkbox.id;
+  const isChecked = localStorage.getItem(checkboxId) === "true";
+  checkbox.checked = isChecked;
 }
