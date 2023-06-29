@@ -1,6 +1,15 @@
 $(document).ready(function () {
   var totalSubCheckboxes = $(".sub-checkbox").length;
 
+
+
+// not sure this is needed at the moment
+/*   function updateStorage(a) {
+    (checkboxValues[a.id] = a.checked),
+      localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+  } */
+
+
   function updateProgressBar() {
     var checkedSubCheckboxes = $(".sub-checkbox:checked").length;
     var progress = Math.min(
@@ -10,13 +19,26 @@ $(document).ready(function () {
 
     $("#progress-bar div").css("width", progress + "%");
 
-    // Save checkbox states to localStorage
-    $(".sub-checkbox").each(function () {
-      var checkboxId = $(this).attr("id");
-      var isChecked = $(this).prop("checked");
-      localStorage.setItem(checkboxId, isChecked);
-    });
+// Save checkbox states to localStorage
+$(".sub-checkbox").each(function () {
+  var checkboxId = $(this).attr("id");
+  var isChecked = $(this).prop("checked");
+  localStorage.setItem(checkboxId, isChecked);
+});
+
+$(document).ready(function() {
+  // Load the state from localStorage when the page loads
+  $(".sub-checkbox").each(function () {
+    if (isChecked == 'true') { // compare with double equals, not triple
+      $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
+    } else {
+      $(this).prop("checked", false); // use jQuery syntax to set the checkbox state
+    }
+  });
+});
+
   }
+
 
   $("#reset-button").click(function () {
     $(".top-level-checkbox").prop("checked", false);
@@ -33,11 +55,21 @@ $(document).ready(function () {
   });
 
   $(".sub-checkbox").change(function () {
-    var checkboxId = $(this).attr("id");
-    var isChecked = $(this).prop("checked");
-    localStorage.setItem(checkboxId, isChecked);
+    var $subCheckbox = $(this);
+    var $h4 = $subCheckbox.siblings("h4");
+    var isChecked = $subCheckbox.prop("checked");
+    $h4.toggleClass("crossed-out", isChecked);
+
+    var $bullet = $subCheckbox.closest(".bullet");
+    var $subCheckboxes = $bullet.find(".sub-checkbox");
+    var allSubCheckboxesChecked =
+      $subCheckboxes.length === $subCheckboxes.filter(":checked").length;
+
+    $bullet
+      .find(".top-level-checkbox")
+      .prop("checked", allSubCheckboxesChecked);
     updateProgressBar();
-    updateContentBlockTransparency($(this).closest(".bullet"));
+    updateContentBlockTransparency($bullet);
   });
 
   $(".top-level-checkbox").change(function () {
@@ -61,31 +93,21 @@ $(document).ready(function () {
     $contentBlock.css("opacity", allTopLevelCheckboxesChecked ? 0.5 : 1);
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var body = document.body;
-    var icon = document.getElementById("dark-mode-icon");
-
-    // Initialize icon based on initial dark mode state
-    icon.innerHTML = body.classList.contains("dark-mode")
-      ? "&#9728;"
-      : "&#9790;";
-  });
-
-  function toggleDarkMode() {
-    var body = document.body;
-    body.classList.toggle("dark-mode");
-
-    var darkModeToggle = document.querySelector(".dark-mode-toggle");
-    darkModeToggle.classList.toggle("dark");
-  }
-
-  const checkboxes = document.querySelectorAll("input[type='checkbox']");
-
-  for (const checkbox of checkboxes) {
-    const checkboxId = checkbox.id;
-    const isChecked = localStorage.getItem(checkboxId) === "true";
-    checkbox.checked = isChecked;
-  }
-
   updateProgressBar();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var body = document.body;
+  var icon = document.getElementById("dark-mode-icon");
+
+  // Initialize icon based on initial dark mode state
+  icon.innerHTML = body.classList.contains("dark-mode") ? "&#9728;" : "&#9790;";
+});
+
+function toggleDarkMode() {
+  var body = document.body;
+  body.classList.toggle("dark-mode");
+
+  var darkModeToggle = document.querySelector(".dark-mode-toggle");
+  darkModeToggle.classList.toggle("dark");
+}
