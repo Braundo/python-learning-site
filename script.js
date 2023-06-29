@@ -1,15 +1,6 @@
 $(document).ready(function () {
   var totalSubCheckboxes = $(".sub-checkbox").length;
 
-
-
-// not sure this is needed at the moment
-/*   function updateStorage(a) {
-    (checkboxValues[a.id] = a.checked),
-      localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
-  } */
-
-
   function updateProgressBar() {
     var checkedSubCheckboxes = $(".sub-checkbox:checked").length;
     var progress = Math.min(
@@ -25,18 +16,6 @@ $(".sub-checkbox").each(function () {
   var isChecked = $(this).prop("checked");
   localStorage.setItem(checkboxId, isChecked);
 });
-
-$(document).ready(function() {
-  // Load the state from localStorage when the page loads
-  $(".sub-checkbox").each(function () {
-    if (isChecked == 'true') { // compare with double equals, not triple
-      $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
-    } else {
-      $(this).prop("checked", false); // use jQuery syntax to set the checkbox state
-    }
-  });
-});
-
   }
 
 
@@ -110,4 +89,22 @@ function toggleDarkMode() {
 
   var darkModeToggle = document.querySelector(".dark-mode-toggle");
   darkModeToggle.classList.toggle("dark");
+}
+
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+for (const checkbox of checkboxes) {
+  checkbox.addEventListener("change", () => {
+    localStorage.setItem("checkboxes", JSON.stringify(checkboxes));
+  });
+}
+
+const checkboxesJSON = localStorage.getItem("checkboxes");
+
+if (checkboxesJSON) {
+  const checkboxes = JSON.parse(checkboxesJSON);
+
+  for (const checkbox of checkboxes) {
+    checkbox.checked = true;
+  }
 }
