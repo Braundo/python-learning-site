@@ -11,6 +11,7 @@ This code is currently hosted live at [pythonlearning.io](https://www.pythonlear
 - [x] ~~Update dark mode/light mode toggle icons~~
 - [ ] Implement `localStorage` and `sessionStorage` APIs to maintain progress state between browser refreshes
 - [ ] Update mobile checkmarks to fill box instead of checkmark
+- [ ] Update light mode checkbox hover colors
 - [ ] Add a Kubernetes learning plan (longer term goal)
 
 ### Legal Statements
