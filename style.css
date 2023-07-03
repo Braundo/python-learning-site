@@ -383,7 +383,7 @@ body.dark-mode .small-logo {
   position: relative;
   display: flex;
   width: 650px;
-  background-color: #D8DEE9;
+  background-color: #d8dee9;
   color: #3f5173;
   height: 45px;
   align-items: center;
@@ -398,7 +398,7 @@ body.dark-mode .make-snippet {
   position: relative;
   display: flex;
   width: 650px;
-  background-color: #171717;
+  background-color: #1d1f33;
   color: #e2e2e2;
   height: 45px;
   align-items: center;
@@ -441,7 +441,7 @@ body.dark-mode .copy-btn:hover {
   right: 5px;
   padding: 5px 10px;
   background-color: #3083ff;
-  color: #EAEAEA;
+  color: #eaeaea;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -454,7 +454,7 @@ body.dark-mode .copy-btn:hover {
   right: 5px;
   padding: 5px 10px;
   background-color: #78aeff;
-  color: #EAEAEA;
+  color: #eaeaea;
   border: none;
   border-radius: 5px;
   cursor: pointer;
