@@ -382,7 +382,7 @@ body.dark-mode .small-logo {
 .make-snippet {
   position: relative;
   display: flex;
-  width: 650px;
+  width: 750px;
   background-color: #d8dee9;
   color: #3f5173;
   height: 45px;
@@ -397,7 +397,7 @@ body.dark-mode .small-logo {
 body.dark-mode .make-snippet {
   position: relative;
   display: flex;
-  width: 650px;
+  width: 750px;
   background-color: #1d1f33;
   color: #e2e2e2;
   height: 45px;
