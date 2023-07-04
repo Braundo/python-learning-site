@@ -6,27 +6,6 @@ $(document).ready(function () {
 
   var totalSubCheckboxes = $(".sub-checkbox").length;
 
-  // Load the state from localStorage when the page loads
-  $(".sub-checkbox").each(function () {
-      var checkboxId = $(this).attr("id");
-      var isChecked = localStorage.getItem(checkboxId) == 'true'; // get the state from localStorage
-
-      if (isChecked) { // compare with double equals, not triple
-          $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
-      } else {
-          $(this).prop("checked", false); // use jQuery syntax to set the checkbox state
-      }
-  });
-
-
-
-// not sure this is needed at the moment
-/*   function updateStorage(a) {
-    (checkboxValues[a.id] = a.checked),
-      localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
-  } */
-
-
   function updateProgressBar() {
     var checkedSubCheckboxes = $(".sub-checkbox:checked").length;
     var progress = Math.min(
@@ -36,12 +15,12 @@ $(document).ready(function () {
 
     $("#progress-bar div").css("width", progress + "%");
 
-// Save checkbox states to localStorage
-$(".sub-checkbox").each(function () {
-  var checkboxId = $(this).attr("id");
-  var isChecked = $(this).prop("checked");
-  localStorage.setItem(checkboxId, isChecked);
-});
+    // Save checkbox states to localStorage whenever they change
+    $(".sub-checkbox").change(function () {
+      var checkboxId = $(this).attr("id");
+      var isChecked = $(this).prop("checked");
+      localStorage.setItem(checkboxId, isChecked);
+  });
   }
 
 
@@ -99,6 +78,18 @@ $(".sub-checkbox").each(function () {
   }
 
   updateProgressBar();
+
+    // Load the state from localStorage when the page loads
+    $(".sub-checkbox").each(function () {
+      var checkboxId = $(this).attr("id");
+      var isChecked = localStorage.getItem(checkboxId) === true; // get the state from localStorage
+
+      if (isChecked) { // compare with double equals, not triple
+          $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
+      } else {
+          $(this).prop("checked", false); // use jQuery syntax to set the checkbox state
+      }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
