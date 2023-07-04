@@ -1,5 +1,21 @@
 $(document).ready(function () {
+  // Assign unique IDs to each checkbox
+  $(".sub-checkbox").each(function(index) {
+    $(this).attr("id", "checkbox" + index);
+});
   var totalSubCheckboxes = $(".sub-checkbox").length;
+
+  // Load the state from localStorage when the page loads
+  $(".sub-checkbox").each(function () {
+    var checkboxId = $(this).attr("id");
+    var isChecked = localStorage.getItem(checkboxId) == 'true'; // get the state from localStorage
+
+    if (isChecked) { // compare with double equals, not triple
+        $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
+    } else {
+        $(this).prop("checked", false); // use jQuery syntax to set the checkbox state
+    }
+});
 
 
 
