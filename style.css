@@ -190,7 +190,7 @@ body.dark-mode #progress-bar {
 }
 #progress-bar div {
   height: 7px;
-  background-color: #4edc53;
+  background-color: #a573e8;
   width: 0;
   border-radius: 10px;
   transition: width 0.4s;
@@ -236,11 +236,11 @@ body.dark-mode #reset-button:hover {
 }
 
 a {
-  color: #3083ff;
+  color: #a573e8;
 }
 
 body.dark-mode a {
-  color: #4edc53;
+  color: #a573e8;
 }
 
 /* Style the sub-bullet text */
@@ -386,7 +386,7 @@ body.dark-mode .small-logo {
   position: relative;
   display: flex;
   width: 750px;
-  background-color: #d8dee9;
+  background-color: #e1e6f0;
   color: #3f5173;
   height: 45px;
   align-items: center;
@@ -417,8 +417,8 @@ body.dark-mode .copy-btn {
   top: 5px;
   right: 5px;
   padding: 5px 10px;
-  background-color: #50fa7b;
-  color: #44475a;
+  background-color: #a573e8;
+  color: #252746;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -430,8 +430,8 @@ body.dark-mode .copy-btn:hover {
   top: 5px;
   right: 5px;
   padding: 5px 10px;
-  background-color: #b9ffcb;
-  color: #44475a;
+  background-color: #cea9ff;
+  color: #252746;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -443,7 +443,7 @@ body.dark-mode .copy-btn:hover {
   top: 5px;
   right: 5px;
   padding: 5px 10px;
-  background-color: #3083ff;
+  background-color: #343661;
   color: #eaeaea;
   border: none;
   border-radius: 5px;
@@ -456,7 +456,7 @@ body.dark-mode .copy-btn:hover {
   top: 5px;
   right: 5px;
   padding: 5px 10px;
-  background-color: #78aeff;
+  background-color: #6d70af;
   color: #eaeaea;
   border: none;
   border-radius: 5px;
