@@ -139,16 +139,16 @@ body {
 }
 /* Dark mode styles */
 body.dark-mode {
-  background-color: rgb(53, 54, 64);
+  background-color: #252746;
   color: #fff;
 }
 body.dark-mode .content-block {
-  background-color: rgb(68, 70, 83);
+  background-color: #343661;
 }
 
 /* Dark mode styles for progress bar */
 body.dark-mode #progress-bar {
-  background-color: rgb(68, 70, 83);
+  background-color: #343661;
 }
 
 /* Style the bullet text */
@@ -223,14 +223,14 @@ body.dark-mode #reset-button {
   padding: 5px 10px;
   color: #fff;
   font-size: 20px;
-  background-color: rgb(68, 70, 83);
+  background-color: #343661;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
   margin-bottom: 80px;
 }
 body.dark-mode #reset-button:hover {
-  background-color: rgb(101, 104, 123);
+  background-color: #5a5d95;
 }
 
 a {
