@@ -50,6 +50,12 @@ body {
     width: 14px !important;
     height: 14px !important;
   }
+  body.dark-mode input[type="checkbox"]:hover {
+    background-color: transparent;
+  }
+  input[type="checkbox"]:hover {
+    background-color: transparent;
+  }
   .sub-bullet h4 {
     margin: 0;
     display: inline;
