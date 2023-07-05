@@ -482,3 +482,58 @@ body.dark-mode .copy-btn:hover {
 .mobile-hider: {
   border: none;
 }
+
+/* Modal styling */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+}
+
+/* Modal Content */
+body.dark-mode .modal-content {
+  background-color: #343661;
+  box-shadow: 0px 0px 25px 15px #a573e8;
+  color: #ffffff;
+  font-size: 30px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 70%;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px 15px #a573e8;
+  color: #343661;
+  font-size: 30px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 70%;
+}
+
+/* The Close Button */
+.close {
+  color: #a573e8;
+  margin-top: -10px;
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #c69dfc;
+  text-decoration: none;
+  cursor: pointer;
+}

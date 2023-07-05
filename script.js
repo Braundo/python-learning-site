@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // Assign unique IDs to each checkbox
-  $(".sub-checkbox").each(function(index) {
-      $(this).attr("id", "checkbox" + index);
+  $(".sub-checkbox").each(function (index) {
+    $(this).attr("id", "checkbox" + index);
   });
 
   var totalSubCheckboxes = $(".sub-checkbox").length;
@@ -15,14 +15,40 @@ $(document).ready(function () {
 
     $("#progress-bar div").css("width", progress + "%");
 
+    // Check if progress is 100 and display a modal
+    if (progress === 100) {
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // Display the modal
+      modal.style.display = "block";
+
+      // Create confetti
+      createConfetti();
+    }
+
     // Save checkbox states to localStorage whenever they change
     $(".sub-checkbox").change(function () {
       var checkboxId = $(this).attr("id");
       var isChecked = $(this).prop("checked");
       localStorage.setItem(checkboxId, isChecked);
-  });
+    });
   }
-
 
   $("#reset-button").click(function () {
     $(".top-level-checkbox").prop("checked", false);
@@ -79,16 +105,17 @@ $(document).ready(function () {
 
   updateProgressBar();
 
-    // Load the state from localStorage when the page loads
-    $(".sub-checkbox").each(function () {
-      var checkboxId = $(this).attr("id");
-      var isChecked = localStorage.getItem(checkboxId) === true; // get the state from localStorage
+  // Load the state from localStorage when the page loads
+  $(".sub-checkbox").each(function () {
+    var checkboxId = $(this).attr("id");
+    var isChecked = localStorage.getItem(checkboxId) === true; // get the state from localStorage
 
-      if (isChecked) { // compare with double equals, not triple
-          $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
-      } else {
-          $(this).prop("checked", false); // use jQuery syntax to set the checkbox state
-      }
+    if (isChecked) {
+      // compare with double equals, not triple
+      $(this).prop("checked", true); // use jQuery syntax to set the checkbox state
+    } else {
+      $(this).prop("checked", false); // use jQuery syntax to set the checkbox state
+    }
   });
 });
 
@@ -106,4 +133,12 @@ function toggleDarkMode() {
 
   var darkModeToggle = document.querySelector(".dark-mode-toggle");
   darkModeToggle.classList.toggle("dark");
+}
+
+function createConfetti() {
+  confetti({
+    particleCount: 200,
+    spread: 90,
+    origin: { y: 0 },
+  });
 }
