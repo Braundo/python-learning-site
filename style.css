@@ -47,8 +47,8 @@ body {
   }
   .bullet input[type="checkbox"],
   .sub-bullet input[type="checkbox"] {
-    width: 10px !important;
-    height: 10px !important;
+    width: 14px !important;
+    height: 14px !important;
   }
   .sub-bullet h4 {
     margin: 0;
@@ -281,13 +281,16 @@ body.dark-mode a {
   width: 18px;
   height: 18px;
   margin-right: 10px;
-  border: 2px solid rgb(96, 99, 117);
+  border: 2px solid #565993;
   border-radius: 4px;
   background-color: transparent;
   vertical-align: top; /* Add this line to vertically align checkboxes */
 }
+body.dark-mode input[type="checkbox"]:hover {
+  background-color: #565993;
+}
 input[type="checkbox"]:hover {
-  background-color: rgba(53, 54, 64, 0.799);
+  background-color: #c2c4e4;
 }
 /* Style the custom checkbox checkmark */
 .bullet input[type="checkbox"]::before,
@@ -297,9 +300,10 @@ input[type="checkbox"]:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234edc53'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17' stroke='%234edc53' stroke-width='2' fill='none' /%3E%3C/svg%3E");
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A573E8'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17' stroke='%23A573E8' stroke-width='2' fill='none' /%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
